@@ -27,6 +27,8 @@
 		5F12E42A1194879100534D85 /* BMDatasetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E4291194879000534D85 /* BMDatasetConfig.m */; };
 		5F12E42E119488C700534D85 /* BMartService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E42D119488C700534D85 /* BMartService.m */; };
 		5F12E4341194893900534D85 /* BMRegistryXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E4331194893900534D85 /* BMRegistryXMLParser.m */; };
+		5F98D8FA1195F3B000B0E315 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D8F91195F3B000B0E315 /* icon.png */; };
+		5F98D90A1195F44C00B0E315 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D9091195F44C00B0E315 /* icon.icns */; };
 		5FDF63AD1195D3710044118E /* BMDatasetTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF63AC1195D3710044118E /* BMDatasetTableParser.m */; };
 		5FDF63B91195D5150044118E /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF63B81195D5150044118E /* CSVParser.m */; };
 		5FF5E5DE1194936C00C8E2FE /* BMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF5E5DD1194936C00C8E2FE /* BMAppDelegate.m */; };
@@ -88,6 +90,8 @@
 		5F12E42D119488C700534D85 /* BMartService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMartService.m; sourceTree = "<group>"; };
 		5F12E4321194893900534D85 /* BMRegistryXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMRegistryXMLParser.h; sourceTree = "<group>"; };
 		5F12E4331194893900534D85 /* BMRegistryXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRegistryXMLParser.m; sourceTree = "<group>"; };
+		5F98D8F91195F3B000B0E315 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		5F98D9091195F44C00B0E315 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		5FDF63AB1195D3710044118E /* BMDatasetTableParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDatasetTableParser.h; sourceTree = "<group>"; };
 		5FDF63AC1195D3710044118E /* BMDatasetTableParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDatasetTableParser.m; sourceTree = "<group>"; };
 		5FDF63B71195D5150044118E /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F98D9091195F44C00B0E315 /* icon.icns */,
+				5F98D8F91195F3B000B0E315 /* icon.png */,
 				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
 				8D15AC360486D014006FF6A4 /* Biomartify-Info.plist */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
@@ -359,7 +365,7 @@
 /* Begin PBXProject section */
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "biomartify" */;
+			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Biomartify" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Biomartify */;
@@ -380,6 +386,8 @@
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				1DDD582C0DA1D0D100B32029 /* BMQueryDocument.xib in Resources */,
 				1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */,
+				5F98D8FA1195F3B000B0E315 /* icon.png in Resources */,
+				5F98D90A1195F44C00B0E315 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +531,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "biomartify" */ = {
+		C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Biomartify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C05733CC08A9546B00998B17 /* Debug */,

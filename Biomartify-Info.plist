@@ -7,27 +7,27 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-		<key>CFBundleTypeExtensions</key>
-		<array>
-			<string>bmart</string>
-			<string>bmartq</string>
-			<string>biomartq</string>
-			<string>biomartquery</string>
-		</array>
-		<key>CFBundleTypeName</key>
-		<string>Biomart Query XML</string>
-		<key>CFBundleTypeRole</key>
-		<string>Editor</string>
-		<key>NSDocumentClass</key>
-		<string>BMQueryDocument</string>
-		<key>NSPersistentStoreTypeKey</key>
-		<string>XML</string>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>bmart</string>
+				<string>bmartq</string>
+				<string>biomartq</string>
+				<string>biomartquery</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Biomart Query XML</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>NSDocumentClass</key>
+			<string>BMQueryDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>XML</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.pearcomp.biomartify</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -48,7 +48,7 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-		<key>UTExportedTypeDeclarations</key>
+	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
 			<key>UTTypeConformsTo</key>
