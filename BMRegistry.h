@@ -16,5 +16,5 @@
 
 @property(nonatomic,retain)NSURL *url;
 @property(nonatomic,retain)NSMutableArray *marts;
-
+@property(nonatomic,retain,readonly)NSArray *visibleMarts;
 @end

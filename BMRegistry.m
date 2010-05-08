@@ -25,6 +25,21 @@
     return self;
 }
 
+//=========================================================== 
+// + (void)initialize
+//
+//=========================================================== 
++ (void)initialize 
+{
+    [[self class] setKeys:
+	 [NSArray arrayWithObjects: @"marts", nil]
+triggerChangeNotificationsForDependentKey: @"visibleMarts"];
+}
+
+-(NSArray*) visibleMarts {
+	return [self.marts filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"visible == nil"]];
+}
+
 
 //=========================================================== 
 // dealloc
@@ -35,6 +50,8 @@
     [super dealloc];
 }
 
-
+-(NSString*) description {
+	return [NSString stringWithFormat:@"[BMRegistry marts:%@]",self.marts];
+}
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import "BMRegistryXMLParser.h"
-
+#import "BMart.h"
+#import "BMRegistry.h"
 
 @implementation BMRegistryXMLParser
 @synthesize registry=_registry;
+@synthesize error=_error;
 
 - (id)initWithData:(NSData*) data
 {
@@ -59,17 +61,17 @@ didStartElement:(NSString *)elementName
     
     if([elementName isEqualToString:@"MartURLLocation"]) {
 		BMart *mart = [[BMart alloc] initWithDatabase:[attributeDict objectForKey:@"database"] 
-											isDefault:[attributeDict objectForKey:@"default"] 
+											isDefault:[[attributeDict objectForKey:@"default"] boolValue] 
 										  displayName:[attributeDict objectForKey:@"displayName"]
 												 host:[attributeDict objectForKey:@"host"]
 									  includeDatasets:[[attributeDict objectForKey:@"includeDatasets"] componentsSeparatedByString:@" "]
 											 martUser:[attributeDict objectForKey:@"martUser"]
 												 name:[attributeDict objectForKey:@"name"]
 												 path:[attributeDict objectForKey:@"path"]
-												 port:[attributeDict objectForKey:@"port"]
+												 port:[[attributeDict objectForKey:@"port"] boolValue]
 								  serverVirtualSchema:[attributeDict objectForKey:@"serverVirtualSchema"]
-											  visible:[attributeDict objectForKey:@"visible"]
-		[_registry.marts addObject: 
+											  visible:[[attributeDict objectForKey:@"visible"] boolValue]];
+		[_registry.marts addObject: mart];
     }
 }
 

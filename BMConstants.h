@@ -8,5 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString * const BMRegistryURLDefault;
+extern NSString * const BMRegistryURLKey;
+
 extern NSString * const BMServiceBaseURLDefault;
 extern NSString * const BMServiceBaseURLKey;
+
+extern NSString * const BMRegistryReceivedNotification;
+extern NSString * const BMRegistryRequestFailedNotification;

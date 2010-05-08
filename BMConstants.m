@@ -8,5 +8,11 @@
 
 #import "BMConstants.h"
 
+NSString * const BMRegistryURLDefault = @"http://www.biomart.org/biomart/martservice?type=registry";
+NSString * const BMRegistryURLKey = @"BMRegistryURL";
+
 NSString * const BMServiceBaseURLDefault = @"http://www.biomart.org/biomart/martservice";
 NSString * const BMServiceBaseURLKey = @"BMServiceBaseURL";
+
+NSString * const BMRegistryReceivedNotification = @"BMRegistryReceived";
+NSString * const BMRegistryRequestFailedNotification = @"BMRegistryRequestFailed";

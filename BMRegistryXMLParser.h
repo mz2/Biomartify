@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 @class BMRegistry;
+@class BMQuery;
 
 @interface BMRegistryXMLParser : NSObject {
 
@@ -17,7 +18,6 @@
     NSError *_error;
 }
 @property(nonatomic,retain,readonly)BMRegistry *registry;
-@property(nonatomic,retain,readonly)BMQuery *query;
 @property(nonatomic,retain,readonly)NSError *error;
 
 + (id)parserWithData:(NSData*)aData;

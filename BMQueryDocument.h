@@ -8,11 +8,16 @@
 
 
 #import <Cocoa/Cocoa.h>
+@class BMRegistry;
 @class BMQuery;
 
 @interface BMQueryDocument : NSDocument
 {
 	BMQuery *_query;
+	BMRegistry *_registry;
 }
+
 @property(nonatomic,retain)BMQuery *query;
+@property(nonatomic,retain)BMRegistry *registry;
+
 @end

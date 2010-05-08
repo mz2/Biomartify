@@ -11,6 +11,7 @@
 @class BMart;
 @class BMDataset;
 
+/*
 @protocol BMartServiceDelegate <NSObject>
 
 -(void) registryReceived:(BMRegistry*)registry;
@@ -26,24 +27,26 @@
 -(void) filterRequestFailed:(NSError*)error;
 
 @end
+ */
 
 @interface BMartService : NSObject {
-	NSString *_baseURL;
-	id<BMartServiceDelegate> _delegate;
+	//NSString *_baseURL;
+	//id<BMartServiceDelegate> _delegate;
 	
 	BMRegistry *_cachedRegistry;
-	NSDictionary *_cachedDatasets;
+	NSMutableDictionary *_cachedDatasets;
 }
 
 @property(nonatomic,copy)NSString *baseURL;
-@property(nonatomic,assign)id<BMartServiceDelegate> delegate;
 @property(nonatomic,retain)BMRegistry *cachedRegistry;
-@property(nonatomic,retain)NSDictionary *cachedDatasets;
 
 -(void) requestRegistryForMartServiceAtURL:(NSURL*)url;
 -(void) requestDatasetsForMart:(BMart*)mart;
 -(void) requestAttributesForDataset:(BMDataset*)dataset;
 -(void) requestFiltersForDataset:(BMDataset*)dataset;
 
++(NSURL*) martRegistryURL;
+
++ (id)sharedMartService; //singleton instance
 
 @end

@@ -8,10 +8,11 @@
 
 #import "BMQueryDocument.h"
 #import "BMQueryXMLParser.h"
+#import "BMRegistry.h"
 
 @implementation BMQueryDocument
 @synthesize query = _query;
-
+@synthesize registry = _registry;
 
 - (id)init
 {
@@ -19,9 +20,33 @@
     if (self) {
         // Add your subclass-specific initialization here.
         // If an error occurs here, send a [self release] message and return nil.
-    
+		[[NSNotificationCenter defaultCenter] addObserver: self
+												 selector: @selector(registryReceived:)
+													 name: BMRegistryReceivedNotification 
+												   object: nil];
+		
+		[[NSNotificationCenter defaultCenter] addObserver: self
+												 selector: @selector(registryRequestFailed:)
+													 name: BMRegistryRequestFailedNotification
+												   object: nil];
     }
     return self;
+}
+
+-(void) dealloc {
+	[_query release], _query = nil;
+	[_registry release], _registry = nil;
+	
+	[super dealloc];
+}
+
+-(void) registryReceived:(NSNotification*) notification {
+	BMLog(@"New registry received");
+	self.registry = (BMRegistry*)[notification object];
+}
+
+-(void) registryRequestFailed:(NSNotification*) notification {
+	BMLog(@"Registry request failed: %@", [notification object]);
 }
 
 - (NSString *)windowNibName

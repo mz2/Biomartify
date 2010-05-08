@@ -39,4 +39,27 @@
 @property(nonatomic,copy)NSString *serverVirtualSchema;
 @property(nonatomic,assign)BOOL visible;
 
+- (id)initWithDatabase:(NSString*)aDatabase 
+			 isDefault:(BOOL)isDefault
+		   displayName:(NSString*)aDisplayName
+				  host:(NSString*)anHost 
+	   includeDatasets:(NSArray*)anIncludeDatasets 
+			  martUser:(NSString*)aMartUser
+				  name:(NSString*)aName 
+				  path:(NSString*)aPath
+				  port:(NSUInteger)aPort 
+   serverVirtualSchema:(NSString*)aServerVirtualSchema
+			   visible:(BOOL)visible;
+
++ (id)martWithDatabase:(NSString*)aDatabase 
+			 isDefault:(BOOL)isDefault 
+		   displayName:(NSString*)aDisplayName 
+				  host:(NSString*)anHost 
+	   includeDatasets:(NSArray*)anIncludeDatasets 
+			  martUser:(NSString*)aMartUser 
+				  name:(NSString*)aName
+				  path:(NSString*)aPath
+				  port:(NSUInteger)aPort 
+   serverVirtualSchema:(NSString*)aServerVirtualSchema 
+			   visible:(BOOL)visible;
 @end

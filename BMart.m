@@ -27,7 +27,7 @@
 //
 //=========================================================== 
 - (id)initWithDatabase:(NSString*)aDatabase 
-			 isDefault:(BOOL)flag
+			 isDefault:(BOOL)isDefault
 		   displayName:(NSString*)aDisplayName
 				  host:(NSString*)anHost 
 	   includeDatasets:(NSArray*)anIncludeDatasets 
@@ -36,11 +36,11 @@
 				  path:(NSString*)aPath
 				  port:(NSUInteger)aPort 
    serverVirtualSchema:(NSString*)aServerVirtualSchema
-			   visible:(BOOL)flag 
+			   visible:(BOOL)visible 
 {
     if (self = [super init]) {
         [self setDatabase:aDatabase];
-        [self setIsDefault:flag];
+        [self setIsDefault:isDefault];
         [self setDisplayName:aDisplayName];
         [self setHost:anHost];
         [self setIncludeDatasets:anIncludeDatasets];
@@ -49,7 +49,7 @@
         [self setPath:aPath];
         [self setPort:aPort];
         [self setServerVirtualSchema:aServerVirtualSchema];
-        [self setVisible:flag];
+        [self setVisible:visible];
     }
     return self;
 }
@@ -60,7 +60,7 @@
 //
 //=========================================================== 
 + (id)martWithDatabase:(NSString*)aDatabase 
-			 isDefault:(BOOL)flag 
+			 isDefault:(BOOL)isDefault 
 		   displayName:(NSString*)aDisplayName 
 				  host:(NSString*)anHost 
 	   includeDatasets:(NSArray*)anIncludeDatasets 
@@ -69,10 +69,10 @@
 				  path:(NSString*)aPath
 				  port:(NSUInteger)aPort 
    serverVirtualSchema:(NSString*)aServerVirtualSchema 
-			   visible:(BOOL)flag  
+			   visible:(BOOL)visible  
 {
     id result = [[[self class] alloc] initWithDatabase:aDatabase 
-											 isDefault:flag 
+											 isDefault:isDefault 
 										   displayName:aDisplayName 
 												  host:anHost
 									   includeDatasets:anIncludeDatasets
@@ -81,7 +81,7 @@
 												  path:aPath
 												  port:aPort
 								   serverVirtualSchema:aServerVirtualSchema 
-											   visible:flag];
+											   visible:visible];
 	
     return [result autorelease];
 }
@@ -102,6 +102,22 @@
     [_serverVirtualSchema release], _serverVirtualSchema = nil;
 	
     [super dealloc];
+}
+
+-(NSString*) description {
+	return [NSString stringWithFormat:
+			@"[BMart db:%@ default:%d displayName:%@ host:%@ includeDatasets:%d martUser:%@ name:%@ path:%@ serverVirtualSchema:%@ visible:%d]",
+			self.database, self.isDefault, self.displayName, self.host, self.includeDatasets, self.martUser, self.name, self.path, self.serverVirtualSchema, self.visible];
+}
+
+-(BOOL) isEqual:(BMart*) obj {
+	if (![obj isKindOfClass:[BMart class]]) {
+		return NO;
+	}
+	
+	BMart *otherMart = (BMart*) obj;
+	if ([obj name] == [self name]) {return YES;}
+	return NO;
 }
 
 @end

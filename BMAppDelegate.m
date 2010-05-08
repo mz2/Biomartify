@@ -7,23 +7,19 @@
 //
 
 #import "BMAppDelegate.h"
+#import "BMartService.h"
 
 
 @implementation BMAppDelegate
 
-+ (void) initialize {
-    NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
-    [defaultValues setObject: BMServiceBaseURLDefault 
-					  forKey: BMServiceBaseURLKey];    
-    
-    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
-}
-
 - (void) awakeFromNib {
-
+	BMLog(@"BMAppDelegate: awakening from NIB");
+	[[BMartService sharedMartService] requestRegistryForMartServiceAtURL: [BMartService martRegistryURL]];
 }
-- (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
 
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
+	BMLog(@"Application will finish launching");
+	
 }
 
 @end
