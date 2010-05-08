@@ -7,7 +7,9 @@
 //
 
 #import "BMQuery.h"
+#import "BMart.h"
 #import "BMDataset.h"
+#import "BMartService.h"
 
 @implementation BMQuery
 @synthesize virtualSchemaName = _virtualSchemaName;
@@ -17,6 +19,7 @@
 @synthesize count = _count;
 @synthesize datasetConfigVersion = _datasetConfigVersion;
 @synthesize dataset = _dataset;
+@synthesize mart = _mart;
 
 //=========================================================== 
 // - (id)init
@@ -82,7 +85,6 @@
 	return [[[[self class] alloc] init] autorelease];
 }
 
-
 //=========================================================== 
 // dealloc
 //=========================================================== 
@@ -94,6 +96,43 @@
     [_dataset release], _dataset = nil;
 	
     [super dealloc];
+}
+
+-(void) setMart:(BMart *) mart {
+	BMLog(@"Setting query mart to %@", mart);
+	[self willChangeValueForKey: @"mart"];
+	
+	[mart retain];
+	[_mart release];
+	_mart = mart;
+	
+	if (self.mart != nil) {
+		if (![self.mart.datasets containsObject: self.dataset]) {
+			BMLog(@"Dataset %@ is not contained by mart %@", self.dataset, self.mart);
+			self.dataset = nil;
+		}
+
+		if (self.dataset == nil) {
+			BMLog(@"Will request datasets for mart %@", self.mart);
+			[[BMartService sharedMartService] requestDatasetsForMart: self.mart];
+		}
+	} else {
+		self.dataset = nil;
+	}
+	
+	[self didChangeValueForKey: @"mart"];
+}
+
+-(void) setDataset:(BMDataset*) dataset {
+	BMLog(@"Setting query dataset to %@", dataset);
+	[self willChangeValueForKey:@"dataset"];
+	
+	[dataset retain];
+	[_dataset release];
+	_dataset = dataset;
+	
+	
+	[self didChangeValueForKey:@"dataset"];
 }
 
 @end

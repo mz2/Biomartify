@@ -7,13 +7,15 @@
 //
 
 #import "BMartService.h"
+#import "BMart.h"
 #import "BMRegistryXMLParser.h"
+#import "BMDatasetTableParser.h"
 #import "ASIHTTPRequest.h"
 
 @implementation BMartService
-@synthesize baseURL = _baseURL;
 //@synthesize delegate = _delegate;
 @synthesize cachedRegistry = _cachedRegistry;
+@synthesize URL = _URL;
 
 //=========================================================== 
 // - (id)init
@@ -22,8 +24,12 @@
 - (id)init
 {
     if (self = [super init]) {
-        [self setBaseURL: nil];
+        [self setURL: nil];
         [self setCachedRegistry: nil];
+		
+		_martsByRequest = [[NSMutableDictionary alloc] init];
+		
+		self.URL = [NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:BMCurrentMartURLKey]];
     }
     return self;
 }
@@ -57,8 +63,8 @@ static BMartService *sharedInstance = nil;
 
 + (void) initialize {
     NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
-    [defaultValues setObject: BMServiceBaseURLDefault 
-					  forKey: BMServiceBaseURLKey];
+    [defaultValues setObject: BMMartURLDefault 
+					  forKey: BMCurrentMartURLKey];
 	
 	[defaultValues setObject: BMRegistryURLDefault
 					  forKey: BMRegistryURLKey];
@@ -76,9 +82,10 @@ static BMartService *sharedInstance = nil;
 //=========================================================== 
 - (void)dealloc
 {
-    [_baseURL release], _baseURL = nil;
+    [_URL release], _URL = nil;
     [_cachedRegistry release], _cachedRegistry = nil;
     [_cachedDatasets release], _cachedDatasets = nil;
+	[_martsByRequest release], _martsByRequest = nil;
 	
     [super dealloc];
 }
@@ -98,7 +105,7 @@ static BMartService *sharedInstance = nil;
 }
 
 -(void) didReceiveRegistry:(ASIHTTPRequest*) req {
-	BMRegistryXMLParser *parser = [[BMRegistryXMLParser alloc] initWithData: [req responseData]];
+	BMRegistryXMLParser *parser = [[[BMRegistryXMLParser alloc] initWithData: [req responseData]] autorelease];
 	
 	_cachedRegistry = [parser.registry retain];
 	BMLog(@"Received registry: %@",_cachedRegistry);
@@ -115,7 +122,39 @@ static BMartService *sharedInstance = nil;
 }
 
 -(void) requestDatasetsForMart:(BMart*)mart {
+	BMLog(@"Requesting datasets for mart %@", mart);	
+	ASIHTTPRequest *request = 
+		[ASIHTTPRequest requestWithURL:[NSURL URLWithString:[[self.URL absoluteString] stringByAppendingFormat:@"?type=datasets&mart=ensembl"]]];
 	
+	[_martsByRequest setObject:mart forKey: [request.url absoluteString]];
+	BMLog(@"%@ %@",_martsByRequest, request);
+	[request setDelegate:self];
+	[request startAsynchronous];
+	[request setDidFinishSelector:@selector(didReceiveDatasets:)];
+	[request setDidFailSelector:@selector(didFailToReceiveDatasets:)];
+	
+}
+
+-(void) didReceiveDatasets:(ASIHTTPRequest*) req {
+	BMDatasetTableParser *parser = [[[BMDatasetTableParser alloc] initWithString: [req responseString]] autorelease];
+	
+	NSString *key = [req.url absoluteString];
+	BMart *mart = [_martsByRequest objectForKey: key];
+	
+	if (mart == nil) {
+		@throw [NSException exceptionWithName:@"BMNilPointerException" 
+									   reason:@"Unexpected nil mart" 
+									 userInfo:nil];
+	}
+	[_martsByRequest removeObjectForKey: key];
+	
+	mart.datasets = parser.datasets;
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:BMartReceivedDatasetsForMartNotification object: mart];
+}
+
+-(void) didFailToReceiveDatasets:(ASIHTTPRequest*) req {
+	[[NSNotificationCenter defaultCenter] postNotificationName:BMartRequestDatasetsForMartFailedNotification object: req.error];
 }
 
 -(void) requestAttributesForDataset:(BMDataset*)dataset {

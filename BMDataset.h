@@ -11,7 +11,11 @@
 #import "BMAttribute.h"
 
 @interface BMDataset : NSObject {
+	
 	NSString *_name;
+	NSString *_displayName;
+	BOOL _visible;
+	
 	NSString *_interface;
 	
 	NSMutableArray *_filters;
@@ -19,16 +23,13 @@
 }
 
 @property(nonatomic,copy)NSString *name;
+@property(nonatomic,copy)NSString *displayName;
+@property(nonatomic,assign)BOOL visible;
+
 @property(nonatomic,copy)NSString *interface;
 
-@property(nonatomic,retain,readonly)NSArray *filters;
-@property(nonatomic,retain,readonly)NSArray *attributes;
-
-- (id)initWithName:(NSString*)aName 
-		 interface:(NSString*)anInterface;
-
-+ (id)datasetWithName:(NSString*)aName
-			interface:(NSString*)anInterface;
+@property(nonatomic,retain)NSMutableArray *filters;
+@property(nonatomic,retain)NSMutableArray *attributes;
 
 + (id)dataset;
 

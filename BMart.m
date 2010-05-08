@@ -21,6 +21,15 @@
 @synthesize port = _port;
 @synthesize serverVirtualSchema = _serverVirtualSchema;
 @synthesize visible = _visible;
+@synthesize datasets = _datasets;
+
++ (void)initialize 
+{
+    [[self class] setKeys:
+	 [NSArray arrayWithObjects: @"datasets", nil]
+triggerChangeNotificationsForDependentKey: @"visibleDatasets"];
+}
+
 
 //=========================================================== 
 // - (id)initWith:
@@ -101,13 +110,13 @@
     [_path release], _path = nil;
     [_serverVirtualSchema release], _serverVirtualSchema = nil;
 	
+	[_datasets release], _datasets = nil;
+	
     [super dealloc];
 }
 
 -(NSString*) description {
-	return [NSString stringWithFormat:
-			@"[BMart db:%@ default:%d displayName:%@ host:%@ includeDatasets:%d martUser:%@ name:%@ path:%@ serverVirtualSchema:%@ visible:%d]",
-			self.database, self.isDefault, self.displayName, self.host, self.includeDatasets, self.martUser, self.name, self.path, self.serverVirtualSchema, self.visible];
+	return [self.displayName copy];
 }
 
 -(BOOL) isEqual:(BMart*) obj {
@@ -115,9 +124,13 @@
 		return NO;
 	}
 	
-	BMart *otherMart = (BMart*) obj;
 	if ([obj name] == [self name]) {return YES;}
 	return NO;
+}
+
+
+-(NSArray*) visibleDatasets {
+	return [self.datasets filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"visible == true"]];
 }
 
 @end

@@ -33,11 +33,15 @@
 	//NSString *_baseURL;
 	//id<BMartServiceDelegate> _delegate;
 	
+	NSURL *_URL;
+	
 	BMRegistry *_cachedRegistry;
 	NSMutableDictionary *_cachedDatasets;
+	
+	NSMutableDictionary *_martsByRequest;
 }
 
-@property(nonatomic,copy)NSString *baseURL;
+@property(nonatomic,copy)NSURL *URL;
 @property(nonatomic,retain)BMRegistry *cachedRegistry;
 
 -(void) requestRegistryForMartServiceAtURL:(NSURL*)url;

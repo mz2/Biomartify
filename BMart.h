@@ -25,7 +25,11 @@
 	NSUInteger _port;
 	NSString *_serverVirtualSchema;
 	BOOL _visible;
+	
+	NSArray *_datasets;
 }
+
+
 
 @property(nonatomic,copy)NSString *database;
 @property(nonatomic,assign)BOOL isDefault;
@@ -38,6 +42,9 @@
 @property(nonatomic,assign)NSUInteger port;
 @property(nonatomic,copy)NSString *serverVirtualSchema;
 @property(nonatomic,assign)BOOL visible;
+
+@property(nonatomic,retain) NSArray *datasets;
+@property(nonatomic,retain,readonly) NSArray *visibleDatasets;
 
 - (id)initWithDatabase:(NSString*)aDatabase 
 			 isDefault:(BOOL)isDefault

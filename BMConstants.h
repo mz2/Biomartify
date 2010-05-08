@@ -11,8 +11,11 @@
 extern NSString * const BMRegistryURLDefault;
 extern NSString * const BMRegistryURLKey;
 
-extern NSString * const BMServiceBaseURLDefault;
-extern NSString * const BMServiceBaseURLKey;
+extern NSString * const BMMartURLDefault;
+extern NSString * const BMCurrentMartURLKey;
 
 extern NSString * const BMRegistryReceivedNotification;
 extern NSString * const BMRegistryRequestFailedNotification;
+
+extern NSString * const BMartReceivedDatasetsForMartNotification;
+extern NSString * const BMartRequestDatasetsForMartFailedNotification;

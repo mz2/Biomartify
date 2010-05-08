@@ -1,5 +1,5 @@
 //
-//  MyDocument.m
+//  BMQueryDocument.m
 //  Biomartify
 //
 //  Created by Matias Piipari on 07/05/2010.
@@ -9,6 +9,7 @@
 #import "BMQueryDocument.h"
 #import "BMQueryXMLParser.h"
 #import "BMRegistry.h"
+#import "BMQuery.h"
 
 @implementation BMQueryDocument
 @synthesize query = _query;
@@ -29,13 +30,50 @@
 												 selector: @selector(registryRequestFailed:)
 													 name: BMRegistryRequestFailedNotification
 												   object: nil];
+		
+		[[NSNotificationCenter defaultCenter] addObserver: self
+												 selector: @selector(receivedDatasetsForMart:)
+													 name: BMartReceivedDatasetsForMartNotification
+												   object: nil];
+				
+		[[NSNotificationCenter defaultCenter] addObserver: self
+												 selector: @selector(failedToReceiveDatasetsForMart:)
+													 name: BMartRequestDatasetsForMartFailedNotification
+												   object: nil];
+		
+		/*
+		[self addObserver: self 
+			   forKeyPath: @"query.mart" 
+				  options: NSKeyValueObservingOptionNew 
+				  context: nil];
+		 */
     }
     return self;
 }
 
+/*
+-(void) observeValueForKeyPath:(NSString *)keyPath 
+					  ofObject:(id)object 
+						change:(NSDictionary *)change
+					   context:(void *)context {
+	if ([keyPath isEqual:@"query.mart"]) {
+		BMLog(@"query.mart: %@, change: %@", keyPath, change);
+		
+		//self.query.mart = [change objectForKey:NSKeyValueChangeNewKey];
+		//[self setValue:[change objectForKey:NSKeyValueChangeNewKey] forKey:keyPath];
+	}
+	
+	[super observeValueForKeyPath:keyPath
+						 ofObject:object
+						   change:change
+						  context:context];
+}*/
+
 -(void) dealloc {
 	[_query release], _query = nil;
 	[_registry release], _registry = nil;
+	
+	[self removeObserver:self forKeyPath:@"query.mart"];
 	
 	[super dealloc];
 }
@@ -43,10 +81,22 @@
 -(void) registryReceived:(NSNotification*) notification {
 	BMLog(@"New registry received");
 	self.registry = (BMRegistry*)[notification object];
+	
+	if (self.query.mart != nil) {
+		
+	}
 }
 
 -(void) registryRequestFailed:(NSNotification*) notification {
 	BMLog(@"Registry request failed: %@", [notification object]);
+}
+
+-(void) receivedDatasetsForMart:(NSNotification*) notification {
+	BMLog(@"Received datasets for mart: %@", notification.object);
+}
+
+-(void) failedToReceiveDatasetsForMart:(NSNotification*) notification {
+	BMLog(@"Failed to receive datasets for mart %@", notification.object);
 }
 
 - (NSString *)windowNibName
@@ -95,6 +145,10 @@
 		*outError = parser.error;
 	}
     return YES;
+}
+
+-(IBAction) runQuery:(id) sender {
+	BMLog(@"Run query");
 }
 
 @end

@@ -11,8 +11,11 @@
 NSString * const BMRegistryURLDefault = @"http://www.biomart.org/biomart/martservice?type=registry";
 NSString * const BMRegistryURLKey = @"BMRegistryURL";
 
-NSString * const BMServiceBaseURLDefault = @"http://www.biomart.org/biomart/martservice";
-NSString * const BMServiceBaseURLKey = @"BMServiceBaseURL";
+NSString * const BMMartURLDefault = @"http://www.biomart.org/biomart/martservice";
+NSString * const BMCurrentMartURLKey = @"BMServiceBaseURL";
 
 NSString * const BMRegistryReceivedNotification = @"BMRegistryReceived";
 NSString * const BMRegistryRequestFailedNotification = @"BMRegistryRequestFailed";
+
+NSString * const BMartReceivedDatasetsForMartNotification = @"BMRequestDatasetsForMart";
+NSString * const BMartRequestDatasetsForMartFailedNotification = @"BMRequestDatasetsForMartFailed";

@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 @class BMDataset;
+@class BMart;
 
 @interface BMQuery : NSObject {
 	NSString *_virtualSchemaName;
@@ -17,6 +18,7 @@
 	NSUInteger _count;
 	NSString *_datasetConfigVersion;
 	
+	BMart *_mart;
 	BMDataset *_dataset;
 }
 
@@ -26,7 +28,9 @@
 @property(nonatomic,assign)BOOL uniqueRows;
 @property(nonatomic,assign)NSUInteger count;
 @property(nonatomic,copy)NSString *datasetConfigVersion;
-@property(nonatomic,retain)BMDataset *dataset;
+
+@property(nonatomic,retain) BMart *mart;
+@property(nonatomic,retain) BMDataset *dataset;
 
 - (id)initWithVirtualSchemaName:(NSString*)aVirtualSchemaName 
 					  formatter:(NSString*)aFormatter 

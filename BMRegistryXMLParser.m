@@ -71,6 +71,10 @@ didStartElement:(NSString *)elementName
 												 port:[[attributeDict objectForKey:@"port"] boolValue]
 								  serverVirtualSchema:[attributeDict objectForKey:@"serverVirtualSchema"]
 											  visible:[[attributeDict objectForKey:@"visible"] boolValue]];
+		
+		if (mart.displayName.length == 0) {
+			mart.displayName = mart.name;
+		}
 		[_registry.marts addObject: mart];
     }
 }

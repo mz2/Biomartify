@@ -12,6 +12,9 @@
 @implementation BMDataset
 
 @synthesize name = _name;
+@synthesize displayName = _displayName;
+@synthesize visible = _visible;
+
 @synthesize interface = _interface;
 @synthesize filters = _filters;
 @synthesize attributes = _attributes;
@@ -31,37 +34,6 @@
     return self;
 }
 
-
-//=========================================================== 
-// - (id)initWith:
-//
-//=========================================================== 
-- (id)initWithName:(NSString*)aName 
-		 interface:(NSString*)anInterface 
-{
-    if (self = [super init]) {
-        [self setName:aName];
-        [self setInterface:anInterface];
-        _filters = [[NSMutableArray alloc] init];
-        _attributes = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
-
-
-//=========================================================== 
-// + (id)objectWith:
-//
-//=========================================================== 
-+ (id)datasetWithName:(NSString*)aName 
-			interface:(NSString*)anInterface
-{
-    id result = [[[self class] alloc] initWithName:aName 
-										 interface:anInterface];
-	
-    return [result autorelease];
-}
-
 + (id) dataset {
 	return [[[[self class] alloc] init] autorelease];
 }
@@ -79,5 +51,8 @@
     [super dealloc];
 }
 
+-(NSString*) description {
+	return [self.displayName copy];
+}
 
 @end

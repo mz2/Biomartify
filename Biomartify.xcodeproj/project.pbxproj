@@ -27,6 +27,8 @@
 		5F12E42A1194879100534D85 /* BMDatasetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E4291194879000534D85 /* BMDatasetConfig.m */; };
 		5F12E42E119488C700534D85 /* BMartService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E42D119488C700534D85 /* BMartService.m */; };
 		5F12E4341194893900534D85 /* BMRegistryXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E4331194893900534D85 /* BMRegistryXMLParser.m */; };
+		5FDF63AD1195D3710044118E /* BMDatasetTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF63AC1195D3710044118E /* BMDatasetTableParser.m */; };
+		5FDF63B91195D5150044118E /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF63B81195D5150044118E /* CSVParser.m */; };
 		5FF5E5DE1194936C00C8E2FE /* BMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF5E5DD1194936C00C8E2FE /* BMAppDelegate.m */; };
 		5FF5E6151194944100C8E2FE /* BMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF5E6141194944100C8E2FE /* BMConstants.m */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
@@ -86,6 +88,10 @@
 		5F12E42D119488C700534D85 /* BMartService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMartService.m; sourceTree = "<group>"; };
 		5F12E4321194893900534D85 /* BMRegistryXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMRegistryXMLParser.h; sourceTree = "<group>"; };
 		5F12E4331194893900534D85 /* BMRegistryXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRegistryXMLParser.m; sourceTree = "<group>"; };
+		5FDF63AB1195D3710044118E /* BMDatasetTableParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDatasetTableParser.h; sourceTree = "<group>"; };
+		5FDF63AC1195D3710044118E /* BMDatasetTableParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDatasetTableParser.m; sourceTree = "<group>"; };
+		5FDF63B71195D5150044118E /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
+		5FDF63B81195D5150044118E /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
 		5FF5E5DC1194936C00C8E2FE /* BMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAppDelegate.h; sourceTree = "<group>"; };
 		5FF5E5DD1194936C00C8E2FE /* BMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAppDelegate.m; sourceTree = "<group>"; };
 		5FF5E6131194944100C8E2FE /* BMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMConstants.h; sourceTree = "<group>"; };
@@ -199,9 +205,10 @@
 		5F12E28D11946ECB00534D85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5FDF63AA1195D3610044118E /* Dataset */,
 				5F12E4311194892900534D85 /* Mart */,
-				5F12E4301194891700534D85 /* Query */,
 				5F12E42F1194890F00534D85 /* Registry */,
+				5F12E4301194891700534D85 /* Query */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 		5F12E2A511946EE600534D85 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				5FDF63BA1195D5180044118E /* CSVParser */,
 				5F12E2A611946EEA00534D85 /* ASIHTTPRequest */,
 			);
 			name = External;
@@ -261,8 +269,6 @@
 				5F12E2A811946F0300534D85 /* BMQuery.m */,
 				5F12E3591194758800534D85 /* BMQueryXMLParser.h */,
 				5F12E35A1194758800534D85 /* BMQueryXMLParser.m */,
-				5F12E338119471FB00534D85 /* BMDataset.h */,
-				5F12E339119471FB00534D85 /* BMDataset.m */,
 				5F12E33B1194724000534D85 /* BMFilter.h */,
 				5F12E33C1194724000534D85 /* BMFilter.m */,
 				5F12E33E1194724800534D85 /* BMAttribute.h */,
@@ -280,6 +286,26 @@
 				5F12E4291194879000534D85 /* BMDatasetConfig.m */,
 			);
 			name = Mart;
+			sourceTree = "<group>";
+		};
+		5FDF63AA1195D3610044118E /* Dataset */ = {
+			isa = PBXGroup;
+			children = (
+				5F12E338119471FB00534D85 /* BMDataset.h */,
+				5F12E339119471FB00534D85 /* BMDataset.m */,
+				5FDF63AB1195D3710044118E /* BMDatasetTableParser.h */,
+				5FDF63AC1195D3710044118E /* BMDatasetTableParser.m */,
+			);
+			name = Dataset;
+			sourceTree = "<group>";
+		};
+		5FDF63BA1195D5180044118E /* CSVParser */ = {
+			isa = PBXGroup;
+			children = (
+				5FDF63B71195D5150044118E /* CSVParser.h */,
+				5FDF63B81195D5150044118E /* CSVParser.m */,
+			);
+			name = CSVParser;
 			sourceTree = "<group>";
 		};
 		5FF5E5E01194937400C8E2FE /* Application Controller */ = {
@@ -333,7 +359,7 @@
 /* Begin PBXProject section */
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Biomartify" */;
+			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "biomartify" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Biomartify */;
@@ -383,6 +409,8 @@
 				5F12E4341194893900534D85 /* BMRegistryXMLParser.m in Sources */,
 				5FF5E5DE1194936C00C8E2FE /* BMAppDelegate.m in Sources */,
 				5FF5E6151194944100C8E2FE /* BMConstants.m in Sources */,
+				5FDF63AD1195D3710044118E /* BMDatasetTableParser.m in Sources */,
+				5FDF63B91195D5150044118E /* CSVParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Biomartify" */ = {
+		C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "biomartify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C05733CC08A9546B00998B17 /* Debug */,

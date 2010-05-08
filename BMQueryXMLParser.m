@@ -78,8 +78,10 @@ didStartElement:(NSString *)elementName
     }
     
     if([elementName isEqualToString:@"Dataset"]) {
-        _query.dataset = [BMDataset datasetWithName:[attributeDict objectForKey:@"name"] 
-										  interface:[attributeDict objectForKey:@"interface"]];
+        _query.dataset = [BMDataset dataset];
+		_query.dataset.name = [attributeDict objectForKey:@"name"];
+		_query.dataset.interface = [attributeDict objectForKey:@"interface"];
+		
     }
 }
 
