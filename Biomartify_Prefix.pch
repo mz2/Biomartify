@@ -1,0 +1,18 @@
+//
+// Prefix header for all source files of the 'Biomartify' target in the 'Biomartify' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+
+// Don't forget you need to set GCC_PREPROCESSOR_DEFINITIONS to DEBUG=1 in the build settings for the Debug target, otherwise this will not be set
+// see http://iphoneincubator.com/blog/debugging/the-evolution-of-a-replacement-for-nslog
+	#ifdef DEBUG
+// We make it a warning because when unit testing it's nice to see the logs in the list view instead of having to scroll through all the compiler output
+	#define BMLog(...) printf("%s: %s\n", [[NSString stringWithFormat:@"%s:%u", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__] UTF8String], [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+	#else
+	# define BMLog(...) 
+	#endif
+
+	#import "BMConstants.h"
+#endif
