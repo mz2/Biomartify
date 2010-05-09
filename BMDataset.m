@@ -40,6 +40,21 @@
 @synthesize availableAttributes = _availableAttributes;
 
 //=========================================================== 
+// + (void)initialize
+//
+//=========================================================== 
++ (void)initialize 
+{
+    [[self class] setKeys:
+	 [NSArray arrayWithObjects: @"filters", nil]
+triggerChangeNotificationsForDependentKey: @"availableFilters"];
+	
+	[[self class] setKeys:
+	 [NSArray arrayWithObjects: @"attributes", nil]
+triggerChangeNotificationsForDependentKey: @"availableAttributes"];
+}
+
+//=========================================================== 
 // - (id)init
 //
 //=========================================================== 
@@ -106,6 +121,7 @@
 }
 
 -(NSArray*) availableFilters {
+	BMLog(@"Available filters");
 	NSMutableArray *fs = [NSMutableArray array];
 	for (id key in [self.filters allKeys]) {
 		[fs addObject:[self.filters objectForKey: key]];
@@ -116,6 +132,7 @@
 }
 
 -(NSArray*) availableAttributes {
+	BMLog(@"Available attributes");
 	NSMutableArray *as = [NSMutableArray array];
 	for (id key in [self.attributes allKeys]) {
 		[as addObject:[self.attributes objectForKey: key]];
