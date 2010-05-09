@@ -13,6 +13,7 @@
 @synthesize url = _url;
 @synthesize marts = _marts;
 @synthesize martsByName = _martsByName;
+
 //=========================================================== 
 // - (id)init
 //
@@ -34,6 +35,9 @@
     [[self class] setKeys:
 	 [NSArray arrayWithObjects: @"marts", nil]
 triggerChangeNotificationsForDependentKey: @"visibleMarts"];
+	[[self class] setKeys:
+	 [NSArray arrayWithObjects: @"marts", nil]
+triggerChangeNotificationsForDependentKey: @"isLeaf"];
 }
 
 -(NSArray*) visibleMarts {
@@ -73,6 +77,33 @@ triggerChangeNotificationsForDependentKey: @"visibleMarts"];
 
 -(NSString*) description {
 	return [NSString stringWithFormat:@"[BMRegistry marts:%@]",self.marts];
+}
+
+#pragma mark Tree node
+
+-(NSString*) displayName {
+	return [NSString stringWithFormat:@"Biomart registry"];
+}
+
+-(BOOL) isLeaf {
+	return (self.marts.count == 0);
+}
+
+- (NSArray*)children {
+	return self.marts;
+}
+
+-(NSUInteger) countOfChildren {
+	return self.marts.count;
+}
+
+- (id)objectInChildrenAtIndex:(NSUInteger)index {
+	if (self.isLeaf) return nil;
+	return [self.marts objectAtIndex:index];
+}
+
+-(NSImage*) icon {
+	return [NSImage imageNamed:@"registry-list-view.gif"];
 }
 
 @end

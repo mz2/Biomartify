@@ -17,7 +17,7 @@
 	NSError *_error;
 }
 
-@property(nonatomic,retain)NSArray *filters;
+@property(nonatomic,retain)NSMutableArray *filters;
 @property(nonatomic,retain)NSError *error;
 
 

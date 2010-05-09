@@ -28,6 +28,9 @@
     [[self class] setKeys:
 	 [NSArray arrayWithObjects: @"datasets", nil]
 triggerChangeNotificationsForDependentKey: @"visibleDatasets"];
+	[[self class] setKeys:
+	 [NSArray arrayWithObjects: @"datasets", nil]
+triggerChangeNotificationsForDependentKey: @"isLeaf"];
 }
 
 
@@ -128,9 +131,40 @@ triggerChangeNotificationsForDependentKey: @"visibleDatasets"];
 	return NO;
 }
 
+-(NSString*) displayName {
+	return [_displayName lowercaseString];
+}
+
 
 -(NSArray*) visibleDatasets {
 	return [self.datasets filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"visible == true"]];
+}
+
+-(NSComparisonResult) compareAlphabetically:(BMart*)mart {
+	return [self.displayName caseInsensitiveCompare: mart.displayName];
+}
+
+#pragma mark Tree node
+
+-(BOOL) isLeaf {
+	return (self.datasets.count == 0);
+}
+
+- (NSArray*)children {
+	return self.datasets;
+}
+
+-(NSUInteger) countOfChildren {
+	return self.datasets.count;
+}
+
+- (id)objectInChildrenAtIndex:(NSUInteger)index {
+	if (self.isLeaf) return nil;
+	return [self.datasets objectAtIndex:index];
+}
+
+-(NSImage*) icon {
+	return [NSImage imageNamed:@"mart-list-view.png"];
 }
 
 @end

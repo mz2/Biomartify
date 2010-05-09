@@ -27,6 +27,8 @@
 		} else {
 			BMLog(@"Parsing succeeded");
 		}
+		
+		[_registry.marts sortUsingSelector:@selector(compareAlphabetically:)];
     }
     return self;
 }

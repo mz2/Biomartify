@@ -47,8 +47,9 @@
 
 -(void) requestRegistryForMartServiceAtURL:(NSURL*)url;
 -(void) requestDatasetsForMart:(BMart*)mart;
--(void) requestAttributesForDataset:(BMDataset*)dataset;
--(void) requestFiltersForDataset:(BMDataset*)dataset;
+//-(void) requestAttributesForDataset:(BMDataset*)dataset;
+//-(void) requestFiltersForDataset:(BMDataset*)dataset;
+-(void) requestConfigurationForDataset:(BMDataset*)dataset;
 
 +(NSURL*) martRegistryURL;
 

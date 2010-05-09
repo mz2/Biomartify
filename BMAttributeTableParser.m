@@ -27,6 +27,8 @@
 		[parser parseRowsForReceiver:self selector:@selector(parseRecord:)];
 		
     }
+	
+	[_attributes sortUsingSelector:@selector(compareAlphabetically:)];
     return self;
 }
 
@@ -35,7 +37,7 @@
 	
 	if ([record objectForKey:@"name"] == nil) return;
 	
-	attrib.name = [record objectForKey:@"name"];
+	attrib.internalName = [record objectForKey:@"internalName"];
 	
 	[_attributes addObject: attrib];
 }

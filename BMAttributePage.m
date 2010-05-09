@@ -1,24 +1,20 @@
 //
-//  BMAttribute.m
+//  BMAttributePage.m
 //  Biomartify
 //
-//  Created by Matias Piipari on 07/05/2010.
+//  Created by Matias Piipari on 09/05/2010.
 //  Copyright 2010 Wellcome Trust Sanger Institute. All rights reserved.
 //
 
-#import "BMAttribute.h"
+#import "BMAttributePage.h"
 
 
-@implementation BMAttribute
-@synthesize isDefault = _isDefault;
+@implementation BMAttributePage
 @synthesize desc = _desc;
 @synthesize displayName = _displayName;
-@synthesize field = _field;
 @synthesize internalName = _internalName;
-@synthesize key = _key;
-@synthesize linkoutURL = _linkoutURL;
-@synthesize maxLength = _maxLength;
-@synthesize tableConstraint = _tableConstraint;
+@synthesize outFormats = _outFormats;
+@synthesize attributeGroups = _attributeGroups;
 
 //=========================================================== 
 // - (id)init
@@ -31,10 +27,6 @@
     return self;
 }
 
-+(id) attribute {
-	return [[[BMAttribute alloc] init] autorelease];
-}
-
 //=========================================================== 
 // dealloc
 //=========================================================== 
@@ -42,17 +34,14 @@
 {
     [_desc release], _desc = nil;
     [_displayName release], _displayName = nil;
-    [_field release], _field = nil;
     [_internalName release], _internalName = nil;
-    [_key release], _key = nil;
-    [_linkoutURL release], _linkoutURL = nil;
-    [_tableConstraint release], _tableConstraint = nil;
+    [_outFormats release], _outFormats = nil;
+    [_attributeGroups release], _attributeGroups = nil;
 	
     [super dealloc];
 }
 
 -(NSComparisonResult) compareAlphabetically:(id)obj {
-	return [[self displayName] caseInsensitiveCompare: [obj displayName]];
+	return [self.displayName caseInsensitiveCompare: [obj displayName]];
 }
-
 @end

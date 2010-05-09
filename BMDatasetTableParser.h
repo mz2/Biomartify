@@ -17,7 +17,7 @@
 	NSError *_error;
 }
 
-@property(nonatomic,retain)NSArray *datasets;
+@property(nonatomic,retain)NSMutableArray *datasets;
 @property(nonatomic,retain)NSError *error;
 
 @end

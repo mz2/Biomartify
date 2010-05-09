@@ -13,6 +13,7 @@
 	NSURL *_url;
 	NSMutableArray *_marts;
 	NSMutableDictionary *_martsByName;
+	
 }
 
 @property(nonatomic,retain)NSURL *url;
@@ -22,4 +23,5 @@
 
 -(BMart*) martWithName:(NSString*) name;
 
+-(NSImage*) icon;
 @end

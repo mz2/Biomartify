@@ -10,10 +10,13 @@
 #import "BMQueryXMLParser.h"
 #import "BMRegistry.h"
 #import "BMQuery.h"
+#import "BMart.h"
 
 @implementation BMQueryDocument
 @synthesize query = _query;
 @synthesize registry = _registry;
+@synthesize martListController = _martListController;
+@synthesize treeSelectionIndexPaths = _treeSelectionIndexPaths;
 
 - (id)init
 {
@@ -41,6 +44,15 @@
 													 name: BMartRequestDatasetsForMartFailedNotification
 												   object: nil];
 		
+		[[NSNotificationCenter defaultCenter] addObserver: self
+												 selector: @selector(receivedConfigurationForDataset:)
+													 name: BMartReceivedDatasetConfigurationForDataset
+												   object: nil];
+		
+		[[NSNotificationCenter defaultCenter] addObserver: self
+												 selector: @selector(failedToReceiveConfigurationForDataset:)
+													 name: BMartRequestDatasetConfigurationForMartFailedNotification
+												   object: nil];
 		/*
 		[self addObserver: self 
 			   forKeyPath: @"query.mart" 
@@ -69,11 +81,33 @@
 						  context:context];
 }*/
 
+-(void) setTreeSelectionIndexPaths:(NSArray*) indexPaths {
+	BMLog(@"Selection index paths:%@", indexPaths);
+	[self willChangeValueForKey:@"treeSelectionIndexPaths"];
+	[_treeSelectionIndexPaths retain];
+	[_treeSelectionIndexPaths release];
+	_treeSelectionIndexPaths = indexPaths;
+	
+	if (_treeSelectionIndexPaths.count > 0) {
+		NSIndexPath *indexPath = [_treeSelectionIndexPaths objectAtIndex:0];
+		
+		if (indexPath.length > 1) {
+			if (indexPath.length == 2) {
+				BMart *mart = [self.registry.marts objectAtIndex: [indexPath indexAtPosition:1]];
+				self.query.mart = mart;
+			} else if (indexPath.length == 3) {
+				BMart *mart = [self.registry.marts objectAtIndex: [indexPath indexAtPosition: 1]];
+				self.query.dataset = [mart.datasets objectAtIndex:[indexPath indexAtPosition: 2]]; 
+			}
+		}		
+	} 
+	
+	[self didChangeValueForKey:@"treeSelectionIndexPaths"];
+}
+
 -(void) dealloc {
 	[_query release], _query = nil;
 	[_registry release], _registry = nil;
-	
-	[self removeObserver:self forKeyPath:@"query.mart"];
 	
 	[super dealloc];
 }
@@ -97,6 +131,15 @@
 
 -(void) failedToReceiveDatasetsForMart:(NSNotification*) notification {
 	BMLog(@"Failed to receive datasets for mart %@", notification.object);
+}
+
+
+-(void) receivedConfigurationForDataset:(NSNotification*) notification {
+	BMLog(@"Received configuration for dataset");
+}
+
+-(void) failedToReceiveConfigurationForDataset:(NSNotification*) notification {
+	BMLog(@"Failed to receive configuration for dataset");
 }
 
 - (NSString *)windowNibName
@@ -147,8 +190,34 @@
     return YES;
 }
 
+#pragma mark Actions
 -(IBAction) runQuery:(id) sender {
 	BMLog(@"Run query");
 }
+
+-(IBAction) addFilter:(id) sender {
+	BMLog(@"Add filter");
+}
+
+-(IBAction) addAttribute:(id) sender {
+	BMLog(@"Add attribute");
+}
+
+#pragma mark Document window title
+
+-(NSString*) displayName {
+	return @"Biomartify";
+}
+
+/*
+- (NSString *) windowTitleForDocumentDisplayName: (NSString *) displayName
+{
+    NSString *string;
+    string = [NSString stringWithFormat: @"Overview of %@", displayName];
+	
+    return (string);
+	
+} // windowTitleForDocumentDisplayName
+ */
 
 @end

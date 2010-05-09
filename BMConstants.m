@@ -25,3 +25,6 @@ NSString * const BMartRequestAttributesForDatasetFailedNotification = @"BMReques
 
 NSString * const BMartReceivedFiltersForDatasetNotification = @"BMReceivedFiltersForDataset";
 NSString * const BMartRequestFiltersForDatasetFailedNotification = @"BMRequestFiltersFordatasetFailed";
+
+NSString * const BMartReceivedDatasetConfigurationForDataset = @"BMartReceivedDatasetConfigurationForDataset";
+NSString * const BMartRequestDatasetConfigurationForMartFailedNotification = @"BMartRequestDatasetConfigurationForMartFailedNotification";

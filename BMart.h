@@ -69,4 +69,8 @@
 				  port:(NSUInteger)aPort 
    serverVirtualSchema:(NSString*)aServerVirtualSchema 
 			   visible:(BOOL)visible;
+
+-(NSComparisonResult) compareAlphabetically:(BMart*)mart;
+
+-(NSImage*) icon;
 @end

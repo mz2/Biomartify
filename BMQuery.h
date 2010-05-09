@@ -20,6 +20,9 @@
 	
 	BMart *_mart;
 	BMDataset *_dataset;
+	
+	NSMutableArray *_filters;
+	NSMutableArray *_attributes;
 }
 
 @property(nonatomic,copy)NSString *virtualSchemaName;
@@ -31,6 +34,9 @@
 
 @property(nonatomic,retain) BMart *mart;
 @property(nonatomic,retain) BMDataset *dataset;
+
+@property(nonatomic,retain) NSMutableArray *filters;
+@property(nonatomic,retain) NSMutableArray *attributes;
 
 - (id)initWithVirtualSchemaName:(NSString*)aVirtualSchemaName 
 					  formatter:(NSString*)aFormatter 

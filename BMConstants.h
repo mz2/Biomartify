@@ -25,3 +25,6 @@ extern NSString * const BMartRequestAttributesForDatasetFailedNotification;
 
 extern NSString * const BMartReceivedFiltersForDatasetNotification;
 extern NSString * const BMartRequestFiltersForDatasetFailedNotification;
+
+extern NSString * const BMartReceivedDatasetConfigurationForDataset;
+extern NSString * const BMartRequestDatasetConfigurationForMartFailedNotification;

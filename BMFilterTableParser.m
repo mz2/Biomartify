@@ -35,7 +35,7 @@
 	
 	if ([record objectForKey:@"name"] == nil) return;
 	
-	filter.name = [record objectForKey:@"name"];
+	filter.internalName = [record objectForKey:@"internalName"];
 	
 	[_filters addObject: filter];
 }

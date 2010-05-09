@@ -1,24 +1,20 @@
 //
-//  BMAttribute.m
+//  BMFilterGroup.m
 //  Biomartify
 //
-//  Created by Matias Piipari on 07/05/2010.
+//  Created by Matias Piipari on 09/05/2010.
 //  Copyright 2010 Wellcome Trust Sanger Institute. All rights reserved.
 //
 
-#import "BMAttribute.h"
+#import "BMFilterGroup.h"
 
 
-@implementation BMAttribute
-@synthesize isDefault = _isDefault;
-@synthesize desc = _desc;
+@implementation BMFilterGroup
 @synthesize displayName = _displayName;
-@synthesize field = _field;
+@synthesize desc = _desc;
+@synthesize hidden = _hidden;
 @synthesize internalName = _internalName;
-@synthesize key = _key;
-@synthesize linkoutURL = _linkoutURL;
-@synthesize maxLength = _maxLength;
-@synthesize tableConstraint = _tableConstraint;
+@synthesize filterCollections = _filterCollections;
 
 //=========================================================== 
 // - (id)init
@@ -31,28 +27,27 @@
     return self;
 }
 
-+(id) attribute {
-	return [[[BMAttribute alloc] init] autorelease];
-}
-
 //=========================================================== 
 // dealloc
 //=========================================================== 
 - (void)dealloc
 {
-    [_desc release], _desc = nil;
     [_displayName release], _displayName = nil;
-    [_field release], _field = nil;
+    [_desc release], _desc = nil;
     [_internalName release], _internalName = nil;
-    [_key release], _key = nil;
-    [_linkoutURL release], _linkoutURL = nil;
-    [_tableConstraint release], _tableConstraint = nil;
+	[_filterCollections release], _filterCollections = nil;
 	
     [super dealloc];
 }
 
+-(NSString*) description {
+	return [NSString stringWithFormat:@"[BMFilterGroup displayName:%@ desc:%@ internalName:%@]", 
+			self.displayName, self.desc, self.internalName];
+}
+
+
 -(NSComparisonResult) compareAlphabetically:(id)obj {
-	return [[self displayName] caseInsensitiveCompare: [obj displayName]];
+	return [self.displayName caseInsensitiveCompare: [obj displayName]];
 }
 
 @end

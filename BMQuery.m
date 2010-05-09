@@ -20,6 +20,8 @@
 @synthesize datasetConfigVersion = _datasetConfigVersion;
 @synthesize dataset = _dataset;
 @synthesize mart = _mart;
+@synthesize filters = _filters;
+@synthesize attributes = _attributes;
 
 //=========================================================== 
 // - (id)init
@@ -134,13 +136,8 @@
 	if (self.dataset != nil) {
 		
 		if (self.dataset.attributes == nil) {
-			BMLog(@"Will request attributes for dataset %@", self.dataset);
-			[[BMartService sharedMartService] requestAttributesForDataset: self.dataset];
-		}
-		
-		if (self.dataset.filters == nil) {
-			BMLog(@"Will request filters for dataset %@", self.dataset);
-			[[BMartService sharedMartService] requestFiltersForDataset: self.dataset];
+			BMLog(@"Will request configuration for dataset %@", self.dataset);
+			[[BMartService sharedMartService] requestConfigurationForDataset: dataset];
 		}
 	}
 	

@@ -26,6 +26,8 @@
 		[parser parseRowsForReceiver:self selector:@selector(parseRecord:)];
 		
     }
+	
+	[_datasets sortUsingSelector:@selector(compareAlphabetically:)];
     return self;
 }
 

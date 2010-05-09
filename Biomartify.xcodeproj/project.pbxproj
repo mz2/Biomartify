@@ -24,11 +24,23 @@
 		5F12E35B1194758800534D85 /* BMQueryXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E35A1194758800534D85 /* BMQueryXMLParser.m */; };
 		5F12E424119486DF00534D85 /* BMRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E423119486DF00534D85 /* BMRegistry.m */; };
 		5F12E4271194870800534D85 /* BMart.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E4261194870800534D85 /* BMart.m */; };
-		5F12E42A1194879100534D85 /* BMDatasetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E4291194879000534D85 /* BMDatasetConfig.m */; };
 		5F12E42E119488C700534D85 /* BMartService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E42D119488C700534D85 /* BMartService.m */; };
 		5F12E4341194893900534D85 /* BMRegistryXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12E4331194893900534D85 /* BMRegistryXMLParser.m */; };
 		5F98D8FA1195F3B000B0E315 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D8F91195F3B000B0E315 /* icon.png */; };
 		5F98D90A1195F44C00B0E315 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F98D9091195F44C00B0E315 /* icon.icns */; };
+		5FCC32CD1196BDE900FE63E6 /* BMDatasetConfigXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC32CC1196BDE900FE63E6 /* BMDatasetConfigXMLParser.m */; };
+		5FCC32D11196C11B00FE63E6 /* BMFilterGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC32D01196C11B00FE63E6 /* BMFilterGroup.m */; };
+		5FCC32D41196C16B00FE63E6 /* BMFilterPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC32D31196C16B00FE63E6 /* BMFilterPage.m */; };
+		5FCC32D81196C23500FE63E6 /* BMAttributePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC32D71196C23500FE63E6 /* BMAttributePage.m */; };
+		5FCC32DB1196C23D00FE63E6 /* BMAttributeGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC32DA1196C23D00FE63E6 /* BMAttributeGroup.m */; };
+		5FCC32DE1196C24A00FE63E6 /* BMAttributeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC32DD1196C24A00FE63E6 /* BMAttributeCollection.m */; };
+		5FCC32E11196C25900FE63E6 /* BMFilterCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC32E01196C25900FE63E6 /* BMFilterCollection.m */; };
+		5FCC32E41196C30800FE63E6 /* BMOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC32E31196C30800FE63E6 /* BMOption.m */; };
+		5FCC35B31196FB3A00FE63E6 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCC35B21196FB3900FE63E6 /* BWToolkitFramework.framework */; };
+		5FCC36B311970E3800FE63E6 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC36B211970E3800FE63E6 /* new.png */; };
+		5FCC37681197261B00FE63E6 /* dataset-list-view.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC37671197261B00FE63E6 /* dataset-list-view.png */; };
+		5FCC376A1197263300FE63E6 /* registry-list-view.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC37691197263300FE63E6 /* registry-list-view.gif */; };
+		5FCC376D1197267500FE63E6 /* mart-list-view.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC376C1197267500FE63E6 /* mart-list-view.png */; };
 		5FDE6A39119648810028209D /* BMAttributeTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDE6A38119648810028209D /* BMAttributeTableParser.m */; };
 		5FDE6A5011964A160028209D /* BMFilterTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDE6A4F11964A160028209D /* BMFilterTableParser.m */; };
 		5FDF63AD1195D3710044118E /* BMDatasetTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF63AC1195D3710044118E /* BMDatasetTableParser.m */; };
@@ -86,14 +98,33 @@
 		5F12E423119486DF00534D85 /* BMRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRegistry.m; sourceTree = "<group>"; };
 		5F12E4251194870800534D85 /* BMart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMart.h; sourceTree = "<group>"; };
 		5F12E4261194870800534D85 /* BMart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMart.m; sourceTree = "<group>"; };
-		5F12E4281194879000534D85 /* BMDatasetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDatasetConfig.h; sourceTree = "<group>"; };
-		5F12E4291194879000534D85 /* BMDatasetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDatasetConfig.m; sourceTree = "<group>"; };
 		5F12E42C119488C700534D85 /* BMartService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMartService.h; sourceTree = "<group>"; };
 		5F12E42D119488C700534D85 /* BMartService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMartService.m; sourceTree = "<group>"; };
 		5F12E4321194893900534D85 /* BMRegistryXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMRegistryXMLParser.h; sourceTree = "<group>"; };
 		5F12E4331194893900534D85 /* BMRegistryXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRegistryXMLParser.m; sourceTree = "<group>"; };
 		5F98D8F91195F3B000B0E315 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		5F98D9091195F44C00B0E315 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		5FCC32CB1196BDE900FE63E6 /* BMDatasetConfigXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDatasetConfigXMLParser.h; sourceTree = "<group>"; };
+		5FCC32CC1196BDE900FE63E6 /* BMDatasetConfigXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDatasetConfigXMLParser.m; sourceTree = "<group>"; };
+		5FCC32CF1196C11B00FE63E6 /* BMFilterGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFilterGroup.h; sourceTree = "<group>"; };
+		5FCC32D01196C11B00FE63E6 /* BMFilterGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMFilterGroup.m; sourceTree = "<group>"; };
+		5FCC32D21196C16B00FE63E6 /* BMFilterPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFilterPage.h; sourceTree = "<group>"; };
+		5FCC32D31196C16B00FE63E6 /* BMFilterPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMFilterPage.m; sourceTree = "<group>"; };
+		5FCC32D61196C23500FE63E6 /* BMAttributePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAttributePage.h; sourceTree = "<group>"; };
+		5FCC32D71196C23500FE63E6 /* BMAttributePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAttributePage.m; sourceTree = "<group>"; };
+		5FCC32D91196C23D00FE63E6 /* BMAttributeGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAttributeGroup.h; sourceTree = "<group>"; };
+		5FCC32DA1196C23D00FE63E6 /* BMAttributeGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAttributeGroup.m; sourceTree = "<group>"; };
+		5FCC32DC1196C24A00FE63E6 /* BMAttributeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAttributeCollection.h; sourceTree = "<group>"; };
+		5FCC32DD1196C24A00FE63E6 /* BMAttributeCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAttributeCollection.m; sourceTree = "<group>"; };
+		5FCC32DF1196C25900FE63E6 /* BMFilterCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFilterCollection.h; sourceTree = "<group>"; };
+		5FCC32E01196C25900FE63E6 /* BMFilterCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMFilterCollection.m; sourceTree = "<group>"; };
+		5FCC32E21196C30800FE63E6 /* BMOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMOption.h; sourceTree = "<group>"; };
+		5FCC32E31196C30800FE63E6 /* BMOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMOption.m; sourceTree = "<group>"; };
+		5FCC35B21196FB3900FE63E6 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = Library/Frameworks/BWToolkitFramework.framework; sourceTree = SDKROOT; };
+		5FCC36B211970E3800FE63E6 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new.png; path = Images/new.png; sourceTree = "<group>"; };
+		5FCC37671197261B00FE63E6 /* dataset-list-view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dataset-list-view.png"; sourceTree = "<group>"; };
+		5FCC37691197263300FE63E6 /* registry-list-view.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "registry-list-view.gif"; sourceTree = "<group>"; };
+		5FCC376C1197267500FE63E6 /* mart-list-view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mart-list-view.png"; sourceTree = "<group>"; };
 		5FDE6A37119648810028209D /* BMAttributeTableParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAttributeTableParser.h; sourceTree = "<group>"; };
 		5FDE6A38119648810028209D /* BMAttributeTableParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAttributeTableParser.m; sourceTree = "<group>"; };
 		5FDE6A4E11964A160028209D /* BMFilterTableParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFilterTableParser.h; sourceTree = "<group>"; };
@@ -119,6 +150,7 @@
 				5F12E2C711946FF600534D85 /* CoreServices.framework in Frameworks */,
 				5F12E2CC1194700300534D85 /* SystemConfiguration.framework in Frameworks */,
 				5F12E2D61194703000534D85 /* libz.dylib in Frameworks */,
+				5FCC35B31196FB3A00FE63E6 /* BWToolkitFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +194,7 @@
 				5F12E2C611946FF600534D85 /* CoreServices.framework */,
 				5F12E2CB1194700300534D85 /* SystemConfiguration.framework */,
 				5F12E2D51194703000534D85 /* libz.dylib */,
+				5FCC35B21196FB3900FE63E6 /* BWToolkitFramework.framework */,
 			);
 			name = Biomartify;
 			sourceTree = "<group>";
@@ -193,6 +226,10 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5FCC376C1197267500FE63E6 /* mart-list-view.png */,
+				5FCC37691197263300FE63E6 /* registry-list-view.gif */,
+				5FCC37671197261B00FE63E6 /* dataset-list-view.png */,
+				5FCC36B211970E3800FE63E6 /* new.png */,
 				5F98D9091195F44C00B0E315 /* icon.icns */,
 				5F98D8F91195F3B000B0E315 /* icon.png */,
 				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
@@ -281,10 +318,6 @@
 				5F12E2A811946F0300534D85 /* BMQuery.m */,
 				5F12E3591194758800534D85 /* BMQueryXMLParser.h */,
 				5F12E35A1194758800534D85 /* BMQueryXMLParser.m */,
-				5F12E33B1194724000534D85 /* BMFilter.h */,
-				5F12E33C1194724000534D85 /* BMFilter.m */,
-				5F12E33E1194724800534D85 /* BMAttribute.h */,
-				5F12E33F1194724800534D85 /* BMAttribute.m */,
 			);
 			name = Query;
 			sourceTree = "<group>";
@@ -294,23 +327,65 @@
 			children = (
 				5F12E4251194870800534D85 /* BMart.h */,
 				5F12E4261194870800534D85 /* BMart.m */,
-				5F12E4281194879000534D85 /* BMDatasetConfig.h */,
-				5F12E4291194879000534D85 /* BMDatasetConfig.m */,
 			);
 			name = Mart;
 			sourceTree = "<group>";
 		};
-		5FDF63AA1195D3610044118E /* Dataset */ = {
+		5FCC32CE1196C11000FE63E6 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				5F12E338119471FB00534D85 /* BMDataset.h */,
-				5F12E339119471FB00534D85 /* BMDataset.m */,
+				5F12E33B1194724000534D85 /* BMFilter.h */,
+				5F12E33C1194724000534D85 /* BMFilter.m */,
+				5FCC32CF1196C11B00FE63E6 /* BMFilterGroup.h */,
+				5FCC32D01196C11B00FE63E6 /* BMFilterGroup.m */,
+				5FCC32D21196C16B00FE63E6 /* BMFilterPage.h */,
+				5FCC32D31196C16B00FE63E6 /* BMFilterPage.m */,
+				5FCC32DF1196C25900FE63E6 /* BMFilterCollection.h */,
+				5FCC32E01196C25900FE63E6 /* BMFilterCollection.m */,
+				5FCC32E21196C30800FE63E6 /* BMOption.h */,
+				5FCC32E31196C30800FE63E6 /* BMOption.m */,
+			);
+			name = Filters;
+			sourceTree = "<group>";
+		};
+		5FCC32D51196C21D00FE63E6 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				5F12E33E1194724800534D85 /* BMAttribute.h */,
+				5F12E33F1194724800534D85 /* BMAttribute.m */,
+				5FCC32D61196C23500FE63E6 /* BMAttributePage.h */,
+				5FCC32D71196C23500FE63E6 /* BMAttributePage.m */,
+				5FCC32D91196C23D00FE63E6 /* BMAttributeGroup.h */,
+				5FCC32DA1196C23D00FE63E6 /* BMAttributeGroup.m */,
+				5FCC32DC1196C24A00FE63E6 /* BMAttributeCollection.h */,
+				5FCC32DD1196C24A00FE63E6 /* BMAttributeCollection.m */,
+			);
+			name = Attributes;
+			sourceTree = "<group>";
+		};
+		5FCC332A1196C7FC00FE63E6 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
 				5FDF63AB1195D3710044118E /* BMDatasetTableParser.h */,
 				5FDF63AC1195D3710044118E /* BMDatasetTableParser.m */,
 				5FDE6A37119648810028209D /* BMAttributeTableParser.h */,
 				5FDE6A38119648810028209D /* BMAttributeTableParser.m */,
 				5FDE6A4E11964A160028209D /* BMFilterTableParser.h */,
 				5FDE6A4F11964A160028209D /* BMFilterTableParser.m */,
+				5FCC32CB1196BDE900FE63E6 /* BMDatasetConfigXMLParser.h */,
+				5FCC32CC1196BDE900FE63E6 /* BMDatasetConfigXMLParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		5FDF63AA1195D3610044118E /* Dataset */ = {
+			isa = PBXGroup;
+			children = (
+				5FCC332A1196C7FC00FE63E6 /* Parsers */,
+				5FCC32D51196C21D00FE63E6 /* Attributes */,
+				5FCC32CE1196C11000FE63E6 /* Filters */,
+				5F12E338119471FB00534D85 /* BMDataset.h */,
+				5F12E339119471FB00534D85 /* BMDataset.m */,
 			);
 			name = Dataset;
 			sourceTree = "<group>";
@@ -398,6 +473,10 @@
 				1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */,
 				5F98D8FA1195F3B000B0E315 /* icon.png in Resources */,
 				5F98D90A1195F44C00B0E315 /* icon.icns in Resources */,
+				5FCC36B311970E3800FE63E6 /* new.png in Resources */,
+				5FCC37681197261B00FE63E6 /* dataset-list-view.png in Resources */,
+				5FCC376A1197263300FE63E6 /* registry-list-view.gif in Resources */,
+				5FCC376D1197267500FE63E6 /* mart-list-view.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +501,6 @@
 				5F12E35B1194758800534D85 /* BMQueryXMLParser.m in Sources */,
 				5F12E424119486DF00534D85 /* BMRegistry.m in Sources */,
 				5F12E4271194870800534D85 /* BMart.m in Sources */,
-				5F12E42A1194879100534D85 /* BMDatasetConfig.m in Sources */,
 				5F12E42E119488C700534D85 /* BMartService.m in Sources */,
 				5F12E4341194893900534D85 /* BMRegistryXMLParser.m in Sources */,
 				5FF5E5DE1194936C00C8E2FE /* BMAppDelegate.m in Sources */,
@@ -431,6 +509,14 @@
 				5FDF63B91195D5150044118E /* CSVParser.m in Sources */,
 				5FDE6A39119648810028209D /* BMAttributeTableParser.m in Sources */,
 				5FDE6A5011964A160028209D /* BMFilterTableParser.m in Sources */,
+				5FCC32CD1196BDE900FE63E6 /* BMDatasetConfigXMLParser.m in Sources */,
+				5FCC32D11196C11B00FE63E6 /* BMFilterGroup.m in Sources */,
+				5FCC32D41196C16B00FE63E6 /* BMFilterPage.m in Sources */,
+				5FCC32D81196C23500FE63E6 /* BMAttributePage.m in Sources */,
+				5FCC32DB1196C23D00FE63E6 /* BMAttributeGroup.m in Sources */,
+				5FCC32DE1196C24A00FE63E6 /* BMAttributeCollection.m in Sources */,
+				5FCC32E11196C25900FE63E6 /* BMFilterCollection.m in Sources */,
+				5FCC32E41196C30800FE63E6 /* BMOption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +565,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = required;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
