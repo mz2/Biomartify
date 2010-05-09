@@ -41,6 +41,7 @@
 		5FCC37681197261B00FE63E6 /* dataset-list-view.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC37671197261B00FE63E6 /* dataset-list-view.png */; };
 		5FCC376A1197263300FE63E6 /* registry-list-view.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC37691197263300FE63E6 /* registry-list-view.gif */; };
 		5FCC376D1197267500FE63E6 /* mart-list-view.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCC376C1197267500FE63E6 /* mart-list-view.png */; };
+		5FCC38941197482500FE63E6 /* BWToolkitFramework.framework in Copy BWToolkit */ = {isa = PBXBuildFile; fileRef = 5FCC35B21196FB3900FE63E6 /* BWToolkitFramework.framework */; };
 		5FDE6A39119648810028209D /* BMAttributeTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDE6A38119648810028209D /* BMAttributeTableParser.m */; };
 		5FDE6A5011964A160028209D /* BMFilterTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDE6A4F11964A160028209D /* BMFilterTableParser.m */; };
 		5FDF63AD1195D3710044118E /* BMDatasetTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF63AC1195D3710044118E /* BMDatasetTableParser.m */; };
@@ -53,6 +54,20 @@
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5FCC38D51197483600FE63E6 /* Copy BWToolkit */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5FCC38941197482500FE63E6 /* BWToolkitFramework.framework in Copy BWToolkit */,
+			);
+			name = "Copy BWToolkit";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -434,6 +449,7 @@
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
+				5FCC38D51197483600FE63E6 /* Copy BWToolkit */,
 			);
 			buildRules = (
 			);
