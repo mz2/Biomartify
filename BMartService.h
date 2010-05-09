@@ -39,6 +39,7 @@
 	NSMutableDictionary *_cachedDatasets;
 	
 	NSMutableDictionary *_martsByRequest;
+	NSMutableDictionary *_datasetsByRequest;
 }
 
 @property(nonatomic,copy)NSURL *URL;

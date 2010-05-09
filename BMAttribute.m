@@ -10,5 +10,10 @@
 
 
 @implementation BMAttribute
+@synthesize name = _name;
+
++(id) attribute {
+	return [[[BMAttribute alloc] init] autorelease];
+}
 
 @end

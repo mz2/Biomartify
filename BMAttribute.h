@@ -11,4 +11,9 @@
 @interface BMAttribute : NSObject {
 	NSString *_name;
 }
+
+@property (retain,nonatomic) NSString *name;
+
++(id) attribute;
+
 @end

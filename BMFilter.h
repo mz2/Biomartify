@@ -14,4 +14,8 @@
 	id _value;
 }
 
+@property (nonatomic,copy) NSString *name;
+
++(id) filter;
+
 @end

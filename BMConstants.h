@@ -19,3 +19,9 @@ extern NSString * const BMRegistryRequestFailedNotification;
 
 extern NSString * const BMartReceivedDatasetsForMartNotification;
 extern NSString * const BMartRequestDatasetsForMartFailedNotification;
+
+extern NSString * const BMartReceivedAttributesForDatasetNotification;
+extern NSString * const BMartRequestAttributesForDatasetFailedNotification;
+
+extern NSString * const BMartReceivedFiltersForDatasetNotification;
+extern NSString * const BMartRequestFiltersForDatasetFailedNotification;

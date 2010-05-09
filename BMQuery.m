@@ -131,6 +131,18 @@
 	[_dataset release];
 	_dataset = dataset;
 	
+	if (self.dataset != nil) {
+		
+		if (self.dataset.attributes == nil) {
+			BMLog(@"Will request attributes for dataset %@", self.dataset);
+			[[BMartService sharedMartService] requestAttributesForDataset: self.dataset];
+		}
+		
+		if (self.dataset.filters == nil) {
+			BMLog(@"Will request filters for dataset %@", self.dataset);
+			[[BMartService sharedMartService] requestFiltersForDataset: self.dataset];
+		}
+	}
 	
 	[self didChangeValueForKey:@"dataset"];
 }

@@ -43,6 +43,8 @@
 }
 
 -(void) dealloc {
+	[_datasets release], _datasets = nil;
+	[_parser release], _parser = nil;
     [_error release], _error = nil;
     [super dealloc];
 }

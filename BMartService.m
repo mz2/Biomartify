@@ -8,8 +8,13 @@
 
 #import "BMartService.h"
 #import "BMart.h"
+#import "BMDataset.h"
+#import "BMAttribute.h"
+#import "BMFilter.h"
 #import "BMRegistryXMLParser.h"
 #import "BMDatasetTableParser.h"
+#import "BMAttributeTableParser.h"
+#import "BMFilterTableParser.h"
 #import "ASIHTTPRequest.h"
 
 @implementation BMartService
@@ -28,6 +33,7 @@
         [self setCachedRegistry: nil];
 		
 		_martsByRequest = [[NSMutableDictionary alloc] init];
+		_datasetsByRequest = [[NSMutableDictionary alloc] init];
 		
 		self.URL = [NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:BMCurrentMartURLKey]];
     }
@@ -86,7 +92,7 @@ static BMartService *sharedInstance = nil;
     [_cachedRegistry release], _cachedRegistry = nil;
     [_cachedDatasets release], _cachedDatasets = nil;
 	[_martsByRequest release], _martsByRequest = nil;
-	
+	[_datasetsByRequest release], _datasetsByRequest = nil;
     [super dealloc];
 }
 
@@ -124,7 +130,7 @@ static BMartService *sharedInstance = nil;
 -(void) requestDatasetsForMart:(BMart*)mart {
 	BMLog(@"Requesting datasets for mart %@", mart);	
 	ASIHTTPRequest *request = 
-		[ASIHTTPRequest requestWithURL:[NSURL URLWithString:[[self.URL absoluteString] stringByAppendingFormat:@"?type=datasets&mart=ensembl"]]];
+		[ASIHTTPRequest requestWithURL:[NSURL URLWithString:[[self.URL absoluteString] stringByAppendingFormat:@"?type=datasets&mart=%@",mart.name]]];
 	
 	[_martsByRequest setObject:mart forKey: [request.url absoluteString]];
 	BMLog(@"%@ %@",_martsByRequest, request);
@@ -154,17 +160,86 @@ static BMartService *sharedInstance = nil;
 }
 
 -(void) didFailToReceiveDatasets:(ASIHTTPRequest*) req {
-	[[NSNotificationCenter defaultCenter] postNotificationName:BMartRequestDatasetsForMartFailedNotification object: req.error];
+	[[NSNotificationCenter defaultCenter] postNotificationName: BMartRequestDatasetsForMartFailedNotification 
+														object: req.error];
 }
 
 -(void) requestAttributesForDataset:(BMDataset*)dataset {
+	BMLog(@"Requesting attributes for dataset %@", dataset);	
+	ASIHTTPRequest *request = 
+	[ASIHTTPRequest requestWithURL:[NSURL URLWithString:[[self.URL absoluteString] stringByAppendingFormat:@"?type=attributes&dataset=%@",dataset.name]]];
 	
+	[_datasetsByRequest setObject:dataset forKey: [request.url absoluteString]];
+	BMLog(@"%@ %@",_datasetsByRequest, request);
+	[request setDelegate:self];
+	[request startAsynchronous];
+	[request setDidFinishSelector:@selector(didReceiveAttributesForDataset:)];
+	[request setDidFailSelector:@selector(didFailToReceiveAttributesForDataset:)];
+}
+
+-(void) didReceiveAttributesForDataset:(ASIHTTPRequest*) req {
+	BMLog(@"Received attributes for dataset");
+	BMAttributeTableParser *parser = [[[BMAttributeTableParser alloc] initWithString: [req responseString]] autorelease];
+	
+	NSString *key = [req.url absoluteString];	
+	BMDataset *dataset = [_datasetsByRequest objectForKey: key];
+	
+	if (dataset == nil) {
+		@throw [NSException exceptionWithName:@"BMNilPointerException" 
+									   reason:@"Unexpected nil dataset" 
+									 userInfo:nil];
+	}
+	[_datasetsByRequest removeObjectForKey: key];
+	
+	dataset.attributes = [parser.attributes mutableCopy];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName: BMartReceivedAttributesForDatasetNotification 
+														object: dataset];
+}
+
+-(void) didFailToreceiveAttributesForDataset:(ASIHTTPRequest*) req {
+	BMLog(@"Failed to receive attributes for dataset");
+	[[NSNotificationCenter defaultCenter] postNotificationName: BMartRequestAttributesForDatasetFailedNotification 
+														object: req.error];
 }
 
 -(void) requestFiltersForDataset:(BMDataset*)dataset {
+	BMLog(@"Requesting filters for dataset %@", dataset);	
+	ASIHTTPRequest *request = 
+	[ASIHTTPRequest requestWithURL:[NSURL URLWithString:[[self.URL absoluteString] stringByAppendingFormat:@"?type=filters&dataset=%@",dataset.name]]];
 	
+	[_datasetsByRequest setObject:dataset forKey: [request.url absoluteString]];
+	BMLog(@"%@ %@",_datasetsByRequest, request);
+	[request setDelegate:self];
+	[request startAsynchronous];
+	[request setDidFinishSelector:@selector(didReceiveFiltersForDataset:)];
+	[request setDidFailSelector:@selector(didFailToReceiveFiltersForDataset:)];
 }
 
+-(void) didReceiveFiltersForDataset:(ASIHTTPRequest*) req {
+	BMLog(@"Received filters for dataset");
+	BMFilterTableParser *parser = [[[BMFilterTableParser alloc] initWithString: [req responseString]] autorelease];
+	
+	NSString *key = [req.url absoluteString];	
+	BMDataset *dataset = [_datasetsByRequest objectForKey: key];
+	
+	if (dataset == nil) {
+		@throw [NSException exceptionWithName:@"BMNilPointerException" 
+									   reason:@"Unexpected nil dataset" 
+									 userInfo:nil];
+	}
+	[_datasetsByRequest removeObjectForKey: key];
+	
+	dataset.filters = [parser.filters mutableCopy];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName: BMartReceivedFiltersForDatasetNotification 
+														object: dataset];
+}
 
+-(void) didFailToreceiveFiltersForDataset:(ASIHTTPRequest*) req {
+	BMLog(@"Failed to receive filters for dataset");
+	[[NSNotificationCenter defaultCenter] postNotificationName: BMartRequestFiltersForDatasetFailedNotification 
+														object: req.error];
+}
 
 @end

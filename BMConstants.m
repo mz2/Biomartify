@@ -19,3 +19,9 @@ NSString * const BMRegistryRequestFailedNotification = @"BMRegistryRequestFailed
 
 NSString * const BMartReceivedDatasetsForMartNotification = @"BMRequestDatasetsForMart";
 NSString * const BMartRequestDatasetsForMartFailedNotification = @"BMRequestDatasetsForMartFailed";
+
+NSString * const BMartReceivedAttributesForDatasetNotification = @"BMReceivedAttributesForDataset";
+NSString * const BMartRequestAttributesForDatasetFailedNotification = @"BMRequestAttributesFordatasetFailed";
+
+NSString * const BMartReceivedFiltersForDatasetNotification = @"BMReceivedFiltersForDataset";
+NSString * const BMartRequestFiltersForDatasetFailedNotification = @"BMRequestFiltersFordatasetFailed";

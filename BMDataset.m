@@ -28,8 +28,6 @@
     if (self = [super init]) {
         [self setName: nil];
         [self setInterface: @"default"];
-        _filters = [[NSMutableArray alloc] init];
-        _attributes = [[NSMutableArray alloc] init];
     }
     return self;
 }

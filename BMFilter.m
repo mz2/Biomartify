@@ -10,5 +10,10 @@
 
 
 @implementation BMFilter
+@synthesize name = _name;
+
++(id) filter {
+	return [[[[BMFilter class] alloc] init] autorelease];
+}
 
 @end
