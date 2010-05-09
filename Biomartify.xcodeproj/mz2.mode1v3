@@ -232,8 +232,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -281,6 +279,8 @@
 								<string>5F12E42B119488B800534D85</string>
 								<string>95BC06281195A3A900F747E1</string>
 								<string>5FF5E5E01194937400C8E2FE</string>
+								<string>5F12E2A511946EE600534D85</string>
+								<string>5F12E2A611946EEA00534D85</string>
 								<string>2A37F4AFFDCFA73011CA2CEA</string>
 								<string>2A37F4B8FDCFA73011CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
@@ -291,13 +291,99 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>98</integer>
-									<integer>84</integer>
-									<integer>83</integer>
+									<integer>61</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>62</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>63</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>64</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>65</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>66</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>67</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>68</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>69</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>70</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>71</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>72</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>73</integer>
+									<integer>60</integer>
+									<integer>58</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 863}, {305, 936}}</string>
+							<string>{{0, 506}, {305, 936}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,7 +402,7 @@
 							<real>305</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>218 116 1551 995 0 0 1920 1178 </string>
+						<string>17 168 1551 995 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -332,7 +418,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BMDatasetConfigXMLParser.m</string>
+								<string>ASIHTTPRequest.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -340,14 +426,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BMDatasetConfigXMLParser.m</string>
+										<string>ASIHTTPRequest.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5FCC38C71197483600FE63E6</string>
+										<string>5FCC38F5119754AA00FE63E6</string>
 										<key>history</key>
 										<array>
-											<string>5F12E2D91194704300534D85</string>
 											<string>5FF5E5E91194938300C8E2FE</string>
 											<string>5FF5E622119494DC00C8E2FE</string>
 											<string>5FF5E646119495D900C8E2FE</string>
@@ -355,11 +440,8 @@
 											<string>5FF5E654119498C000C8E2FE</string>
 											<string>5FDF63CD1195D9090044118E</string>
 											<string>5FDF63E01195DA1B0044118E</string>
-											<string>5FDF64781195E15D0044118E</string>
 											<string>5F98D8FE1195F3B900B0E315</string>
 											<string>5F98D9051195F43F00B0E315</string>
-											<string>5F98D9061195F43F00B0E315</string>
-											<string>5FDE6A1D119645910028209D</string>
 											<string>5FDE6A6011964AEE0028209D</string>
 											<string>5FDE6A6511964AEE0028209D</string>
 											<string>5FDE6A9311964C430028209D</string>
@@ -407,7 +489,10 @@
 											<string>5FCC386F1197455300FE63E6</string>
 											<string>5FCC38711197455300FE63E6</string>
 											<string>5FCC38801197466400FE63E6</string>
-											<string>5FCC388B1197473F00FE63E6</string>
+											<string>5FCC38F1119754AA00FE63E6</string>
+											<string>5FCC38F2119754AA00FE63E6</string>
+											<string>5FCC38F3119754AA00FE63E6</string>
+											<string>5FCC38F4119754AA00FE63E6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -421,7 +506,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1224, 733}}</string>
 								<key>RubberWindowFrame</key>
-								<string>218 116 1551 995 0 0 1920 1178 </string>
+								<string>17 168 1551 995 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -441,7 +526,7 @@
 								<key>Frame</key>
 								<string>{{0, 738}, {1224, 216}}</string>
 								<key>RubberWindowFrame</key>
-								<string>218 116 1551 995 0 0 1920 1178 </string>
+								<string>17 168 1551 995 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -605,7 +690,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>5FCC38D21197483600FE63E6</string>
 		<string>5FCC38D31197483600FE63E6</string>
 		<string>5FCC38D41197483600FE63E6</string>
 		<string>1C78EAAD065D492600B07095</string>
@@ -614,7 +698,7 @@
 		<string>/Users/mz2/Projects/bm/Biomartify.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>218 116 1551 995 0 0 1920 1178 </string>
+	<string>17 168 1551 995 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -630,12 +714,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>ASIHTTPRequest.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

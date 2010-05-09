@@ -2,7 +2,7 @@
 {
 	089C1660FE840EACC02AAC07 /* English */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {914, 671}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1163, 701}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 45}";
 		};
@@ -151,6 +151,13 @@
 			5FCC38811197466400FE63E6 = 5FCC38811197466400FE63E6 /* PBXTextBookmark */;
 			5FCC388B1197473F00FE63E6 = 5FCC388B1197473F00FE63E6 /* PBXTextBookmark */;
 			5FCC38C71197483600FE63E6 /* PBXTextBookmark */ = 5FCC38C71197483600FE63E6 /* PBXTextBookmark */;
+			5FCC38EF119754A900FE63E6 /* XCBuildMessageTextBookmark */ = 5FCC38EF119754A900FE63E6 /* XCBuildMessageTextBookmark */;
+			5FCC38F0119754A900FE63E6 /* PBXTextBookmark */ = 5FCC38F0119754A900FE63E6 /* PBXTextBookmark */;
+			5FCC38F1119754AA00FE63E6 /* PBXTextBookmark */ = 5FCC38F1119754AA00FE63E6 /* PBXTextBookmark */;
+			5FCC38F2119754AA00FE63E6 /* PBXTextBookmark */ = 5FCC38F2119754AA00FE63E6 /* PBXTextBookmark */;
+			5FCC38F3119754AA00FE63E6 /* PlistBookmark */ = 5FCC38F3119754AA00FE63E6 /* PlistBookmark */;
+			5FCC38F4119754AA00FE63E6 /* XCBuildMessageTextBookmark */ = 5FCC38F4119754AA00FE63E6 /* XCBuildMessageTextBookmark */;
+			5FCC38F5119754AA00FE63E6 /* PBXTextBookmark */ = 5FCC38F5119754AA00FE63E6 /* PBXTextBookmark */;
 			5FDE6A1D119645910028209D = 5FDE6A1D119645910028209D /* PlistBookmark */;
 			5FDE6A6011964AEE0028209D = 5FDE6A6011964AEE0028209D /* PBXTextBookmark */;
 			5FDE6A6511964AEE0028209D = 5FDE6A6511964AEE0028209D /* PBXTextBookmark */;
@@ -238,24 +245,29 @@
 		indexTemplatePath = "";
 	};
 	5F12E29211946EDA00534D85 /* ASIFormDataRequest.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ASIFormDataRequest.h;
+		path = /Users/mz2/Projects/bm/ASIFormDataRequest.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {488, 858}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1163, 806}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 491}";
-		};
-	};
-	5F12E29411946EDA00534D85 /* ASIHTTPRequest.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 10439}}";
-			sepNavSelRange = "{459, 0}";
-			sepNavVisRange = "{30996, 2215}";
+			sepNavVisRange = "{0, 1552}";
 		};
 	};
 	5F12E29511946EDA00534D85 /* ASIHTTPRequest.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = ASIHTTPRequest.m;
+		path = /Users/mz2/Projects/bm/ASIHTTPRequest.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1181, 49829}}";
-			sepNavSelRange = "{56704, 0}";
-			sepNavVisRange = "{56071, 1293}";
+			sepNavIntBoundsRect = "{{0, 0}, {1181, 49166}}";
+			sepNavSelRange = "{66092, 0}";
+			sepNavVisRange = "{64513, 2565}";
 		};
 	};
 	5F12E2A711946F0300534D85 /* BMQuery.h */ = {
@@ -441,7 +453,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1163, 3263}}";
 			sepNavSelRange = "{9811, 0}";
-			sepNavVisRange = "{8723, 2581}";
+			sepNavVisRange = "{8723, 2584}";
 		};
 	};
 	5FCC32CF1196C11B00FE63E6 /* BMFilterGroup.h */ = {
@@ -976,6 +988,83 @@
 		rType = 0;
 		vrLen = 2581;
 		vrLoc = 8723;
+	};
+	5FCC38DD119754A000FE63E6 /* ASIHTTPRequest.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1181, 49907}}";
+			sepNavSelRange = "{140049, 0}";
+			sepNavVisRange = "{138984, 1827}";
+		};
+	};
+	5FCC38EF119754A900FE63E6 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Incompatible Objective-C types assigning 'struct NSDictionary *', expected 'struct NSMutableDictionary *'";
+		fRef = 5FCC38DD119754A000FE63E6 /* ASIHTTPRequest.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 3736;
+		rType = 1;
+	};
+	5FCC38F0119754A900FE63E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5FCC38DD119754A000FE63E6 /* ASIHTTPRequest.m */;
+		name = "ASIHTTPRequest.m: 3737";
+		rLen = 0;
+		rLoc = 140078;
+		rType = 0;
+		vrLen = 1530;
+		vrLoc = 139246;
+	};
+	5FCC38F1119754AA00FE63E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5FCC32CC1196BDE900FE63E6 /* BMDatasetConfigXMLParser.m */;
+		name = "BMDatasetConfigXMLParser.m: 225";
+		rLen = 0;
+		rLoc = 9811;
+		rType = 0;
+		vrLen = 2584;
+		vrLoc = 8723;
+	};
+	5FCC38F2119754AA00FE63E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C1660FE840EACC02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 45;
+		vrLoc = 0;
+	};
+	5FCC38F3119754AA00FE63E6 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D15AC360486D014006FF6A4 /* Biomartify-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSMinimumSystemVersion,
+		);
+		name = "/Users/mz2/Projects/bm/Biomartify-Info.plist";
+		rLen = 27;
+		rLoc = 0;
+	};
+	5FCC38F4119754AA00FE63E6 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Incompatible Objective-C types assigning 'struct NSDictionary *', expected 'struct NSMutableDictionary *'";
+		fRef = 5FCC38DD119754A000FE63E6 /* ASIHTTPRequest.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 3736;
+		rType = 1;
+	};
+	5FCC38F5119754AA00FE63E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5FCC38DD119754A000FE63E6 /* ASIHTTPRequest.m */;
+		name = "ASIHTTPRequest.m: 3737";
+		rLen = 0;
+		rLoc = 140049;
+		rType = 0;
+		vrLen = 1827;
+		vrLoc = 138984;
 	};
 	5FDE6A1D119645910028209D /* PlistBookmark */ = {
 		isa = PlistBookmark;
