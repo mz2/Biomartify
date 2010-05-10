@@ -133,17 +133,17 @@
 					if (filter == nil) {@throw [NSException exceptionWithName:@"BMUnexpectedNilFilterException" reason:@"Filter should not be nil" userInfo:nil];}
 					[fs addObject: filter];
 				}
-				collection.filters = [fs copy];
+				collection.filters = [fs sortedArrayUsingSelector:@selector(compareAlphabetically:)];
 				
 				[collections addObject: collection];
 			}
 			
-			filterGroup.filterCollections = [collections copy];
+			filterGroup.filterCollections = [collections sortedArrayUsingSelector:@selector(compareAlphabetically:)];
 			
 			[groups addObject: filterGroup];
 		}
 		
-		page.filterGroups = [groups copy];
+		page.filterGroups = [groups sortedArrayUsingSelector:@selector(compareAlphabetically:)];
 		
 		[filterPages addObject: page];
 	}

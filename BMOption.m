@@ -52,6 +52,10 @@
     [super dealloc];
 }
 
+-(NSString*) desc {
+	return self.displayType;
+}
+
 -(NSString*) description {
 	return [NSString stringWithFormat: @"[BMOption type:%@ style:%@ displayName:%@ displayType internalName:%@ legalQualifiers:%@ qualifier: %@ options: %@",
 			self.type, self.style, self.displayName,self.displayName,self.internalName, self.legalQualifiers, self.qualifier, self.options];
@@ -60,4 +64,20 @@
 -(NSComparisonResult) compareAlphabetically:(id)obj {
 	return [self.displayName caseInsensitiveCompare: [obj displayName]];
 }
+
+
+#pragma mark Filter tree node
+
+-(NSArray*) filterTreeChildren {
+	return nil;
+}
+
+-(NSUInteger) filterTreeChildCount {
+	return 0;
+}
+
+-(BOOL) filterTreeIsLeaf {
+	return YES;
+}
+
 @end

@@ -38,6 +38,10 @@
     [super dealloc];
 }
 
+-(NSString*) desc {
+	return @"";
+}
+
 -(NSString*) description {
 	return [NSString stringWithFormat:@"[BMFilterPage displayName:%@ internalName:%@ groups:%@]",
 			self.displayName, self.internalName, self.filterGroups];
@@ -45,6 +49,20 @@
 
 -(NSComparisonResult) compareAlphabetically:(id)obj {
 	return [self.displayName caseInsensitiveCompare: [obj displayName]];
+}
+
+#pragma mark Filter tree node
+
+-(NSArray*) filterTreeChildren {
+	return self.filterGroups;
+}
+
+-(NSUInteger) filterTreeChildCount {
+	return self.filterGroups.count;
+}
+
+-(BOOL) filterTreeIsLeaf {
+	return self.filterGroups.count == 0;
 }
 
 @end

@@ -91,13 +91,13 @@
 	if (_treeSelectionIndexPaths.count > 0) {
 		NSIndexPath *indexPath = [_treeSelectionIndexPaths objectAtIndex:0];
 		
-		if (indexPath.length > 1) {
-			if (indexPath.length == 2) {
-				BMart *mart = [self.registry.marts objectAtIndex: [indexPath indexAtPosition:1]];
+		if (indexPath.length > 0) {
+			if (indexPath.length == 1) {
+				BMart *mart = [self.registry.marts objectAtIndex: [indexPath indexAtPosition:0]];
 				self.query.mart = mart;
-			} else if (indexPath.length == 3) {
-				BMart *mart = [self.registry.marts objectAtIndex: [indexPath indexAtPosition: 1]];
-				self.query.dataset = [mart.datasets objectAtIndex:[indexPath indexAtPosition: 2]]; 
+			} else if (indexPath.length == 2) {
+				BMart *mart = [self.registry.marts objectAtIndex: [indexPath indexAtPosition: 0]];
+				self.query.dataset = [mart.datasets objectAtIndex:[indexPath indexAtPosition: 1]]; 
 			}
 		}		
 	} 

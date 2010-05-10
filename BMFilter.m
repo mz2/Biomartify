@@ -47,6 +47,10 @@
     [super dealloc];
 }
 
+-(NSString*) desc {
+	return self.displayType;
+}
+
 -(NSString*) description {
 	return [NSString stringWithFormat:@"[BMFilter displayName:%@ internalName:%@ displayType:%@ type:%@ options:%@]", 
 			self.displayName,self.internalName, self.displayType, self.type, self.options];
@@ -58,4 +62,17 @@
 }
 
 
+#pragma mark Filter tree node
+
+-(NSArray*) filterTreeChildren {
+	return self.options;
+}
+
+-(NSUInteger) filterTreeChildCount {
+	return self.options.count;
+}
+
+-(BOOL) filterTreeIsLeaf {
+	return self.options.count == 0;
+}
 @end
