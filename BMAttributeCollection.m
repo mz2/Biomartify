@@ -43,4 +43,17 @@
 	return [self.displayName caseInsensitiveCompare: [obj displayName]];
 }
 
+#pragma mark Filter tree node
+
+-(NSArray*) attribTreeChildren {
+	return self.attributes;
+}
+
+-(NSUInteger) attribTreeChildCount {
+	return self.attributes.count;
+}
+
+-(BOOL) attribTreeIsLeaf {
+	return self.attributes.count == 0;
+}
 @end

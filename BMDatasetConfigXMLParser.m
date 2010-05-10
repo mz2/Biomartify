@@ -205,21 +205,20 @@
 					if (a == nil) {@throw [NSException exceptionWithName:@"BMUnexpectedNilAttributeException" reason:@"Attribute should not be nil" userInfo:nil];}
 					[as addObject: a];
 				}
-				collection.attributes = [as copy];
+				collection.attributes = [as sortedArrayUsingSelector:@selector(compareAlphabetically:)];
 				
 				[collections addObject: collection];
 			}
 			
-			attribGroup.attributeCollections = [collections copy];
-			
+			attribGroup.attributeCollections = [collections sortedArrayUsingSelector:@selector(compareAlphabetically:)];
 			[groups addObject: attribGroup];
 		}
 		
-		page.attributeGroups = [groups copy];
+		page.attributeGroups = [groups sortedArrayUsingSelector:@selector(compareAlphabetically:)];
 		[attribPages addObject: page];
 	}
 	
-	self.dataset.attributePages = attribPages;
+	self.dataset.attributePages = [attribPages sortedArrayUsingSelector:@selector(compareAlphabetically:)];
 	self.dataset.attributes = attributes;
 	
 	BMLog(@"%d filter pages (%d filters)",self.dataset.filterPages.count,[[self.dataset.filters allKeys] count]);

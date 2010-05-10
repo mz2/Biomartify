@@ -44,4 +44,20 @@
 -(NSComparisonResult) compareAlphabetically:(id)obj {
 	return [self.displayName caseInsensitiveCompare: [obj displayName]];
 }
+
+
+#pragma mark Filter tree node
+
+-(NSArray*) attribTreeChildren {
+	return self.attributeGroups;
+}
+
+-(NSUInteger) attribTreeChildCount {
+	return self.attributeGroups.count;
+}
+
+-(BOOL) attribTreeIsLeaf {
+	return self.attributeGroups.count == 0;
+}
+
 @end

@@ -232,6 +232,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -288,8 +290,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>33</integer>
-									<integer>23</integer>
+									<integer>22</integer>
+									<integer>14</integer>
 									<integer>4</integer>
 									<integer>3</integer>
 									<integer>1</integer>
@@ -327,14 +329,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BMOption.m</string>
+								<string>BMDatasetConfigXMLParser.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -342,11 +342,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BMOption.m</string>
+										<string>BMDatasetConfigXMLParser.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5FCC399D1198139800FE63E6</string>
+										<string>5FCC39C91198180F00FE63E6</string>
 										<key>history</key>
 										<array>
 											<string>5FF5E5E91194938300C8E2FE</string>
@@ -388,11 +388,7 @@
 											<string>5FCC37FA119740C700FE63E6</string>
 											<string>5FCC381A1197416800FE63E6</string>
 											<string>5FCC381B1197416800FE63E6</string>
-											<string>5FCC38621197432500FE63E6</string>
-											<string>5FCC38631197432500FE63E6</string>
-											<string>5FCC38641197432500FE63E6</string>
 											<string>5FCC38651197432500FE63E6</string>
-											<string>5FCC386F1197455300FE63E6</string>
 											<string>5FCC38F2119754AA00FE63E6</string>
 											<string>5FCC38F3119754AA00FE63E6</string>
 											<string>5FCC391711980FAF00FE63E6</string>
@@ -405,10 +401,14 @@
 											<string>5FCC39661198124500FE63E6</string>
 											<string>5FCC3979119812D400FE63E6</string>
 											<string>5FCC397A119812D400FE63E6</string>
-											<string>5FCC39831198131200FE63E6</string>
 											<string>5FCC39951198136200FE63E6</string>
 											<string>5FCC399C1198139800FE63E6</string>
-											<string>5FCC39851198131200FE63E6</string>
+											<string>5FCC39B71198161C00FE63E6</string>
+											<string>5FCC39B81198161C00FE63E6</string>
+											<string>5FCC39B91198161C00FE63E6</string>
+											<string>5FCC39BA1198161C00FE63E6</string>
+											<string>5FCC39BB1198161C00FE63E6</string>
+											<string>5FCC39BC1198161C00FE63E6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -606,7 +606,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>5FCC399E1198139800FE63E6</string>
+		<string>5FCC39CA1198180F00FE63E6</string>
 		<string>5FCC392411980FAF00FE63E6</string>
 		<string>5FCC392511980FAF00FE63E6</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -631,12 +631,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>BMDatasetConfigXMLParser.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
